@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamaha - Izrada zvukova</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #e63946;
+            border-bottom: 3px solid #e63946;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #e63946;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #e63946;
+            border-radius: 5px;
+        }
+        .tip {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+        }
+        .info {
+            background: #d1ecf1;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #17a2b8;
+            border-radius: 5px;
+        }
+        ul li, ol li {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #e63946;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="yamaha.html" class="back-link">← Povratak na Yamaha kategorije</a>
+        
+        <h1>Izrada zvukova na Yamaha klavijaturama</h1>
+        
+        <p>Yamaha zvukovi (Voices) su osnova vašeg sviranja. Razumijevanje kako funkcioniraju i kako ih kreirati omogućit će vam da postignete jedinstvene zvučne rezultate.</p>
+        
+        <h2>Što je zvuk (Voice)?</h2>
+        
+        <div class="info">
+            <h3>Definicija</h3>
+            <p><strong>Voice</strong> je pojedinačni zvuk instrumenta koji možete svirati. Svaki zvuk može biti:</p>
+            <ul>
+                <li><strong>Elementarni</strong> - jednostavni zvuk jedne vrste instrumenta</li>
+                <li><strong>Layer</strong> - kombinacija više zvukova koji se sviraju istovremeno</li>
+                <li><strong>Split</strong> - različiti zvukovi za različite dijelove tipkovnice</li>
+                <li><strong>Dual</strong> - dva zvuka u istoj oktavi (dupli zvuk)</li>
+            </ul>
+        </div>
+        
+        <h2>Kako funkcionira zvuk?</h2>
+        
+        <div class="step">
+            <h3>Osnovni principi</h3>
+            <p>Yamaha zvukovi rade na principu:</p>
+            <ol>
+                <li><strong>Waveform (valni oblik)</strong> - osnovni zvuk uzorkovan ili sintetiziran</li>
+                <li><strong>Filter</strong> - oblikuje karakter zvuka</li>
+                <li><strong>Amplifier (Envelope)</strong> - kontrolira glasnoću kroz vrijeme</li>
+                <li><strong>Efekti</strong> - reverb, chorus, delay, itd.</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Elementi zvuka</h3>
+            <p>Svaki zvuk sastoji se od elemenata (Elements):</p>
+            <ul>
+                <li><strong>Element</strong> - pojedinačni zvuk koji čini Voice</li>
+                <li><strong>Voice može imati 1-4 elementa</strong> - što više elemenata, kompleksniji zvuk</li>
+                <li><strong>Svaki element</strong> ima vlastiti waveform, filter, envelope i efekte</li>
+            </ul>
+        </div>
+        
+        <h2>Tipovi zvukova</h2>
+        
+        <div class="step">
+            <h3>1. Normal Voice (Standardni zvuk)</h3>
+            <p>Osnovni tip zvuka - jedan instrument u cijelom rasponu tipkovnice.</p>
+            <p><strong>Primjer:</strong> Grand Piano, Strings, Trumpet</p>
+        </div>
+        
+        <div class="step">
+            <h3>2. Layer Voice (Slojevi)</h3>
+            <p>Dva ili više zvukova sviraju istovremeno:</p>
+            <ul>
+                <li><strong>Dual</strong> - dva zvuka zajedno (npr. Piano + Strings)</li>
+                <li><strong>Triple</strong> - tri zvuka</li>
+                <li><strong>Quad</strong> - četiri zvuka</li>
+            </ul>
+            <p><strong>Kako kreirati:</strong> Voice Edit → Layer → odaberite zvukove i podešavanja</p>
+        </div>
+        
+        <div class="step">
+            <h3>3. Split Voice (Podijeljeni zvuk)</h3>
+            <p>Različiti zvukovi za različite dijelove tipkovnice:</p>
+            <ul>
+                <li><strong>Split Point</strong> - točka gdje se zvuk mijenja</li>
+                <li><strong>Lower</strong> - lijevi dio (obično bas)</li>
+                <li><strong>Upper</strong> - desni dio (obično melodija)</li>
+            </ul>
+            <p><strong>Primjer:</strong> Bas lijevo, Piano desno</p>
+        </div>
+        
+        <div class="step">
+            <h3>4. Left Voice (Lijevi zvuk)</h3>
+            <p>Zvuk koji se svira lijevom rukom, neovisno o stilu:</p>
+            <ul>
+                <li>Koristi se za bas linije ili akorde</li>
+                <li>Radi nezavisno od Right Voice-a</li>
+            </ul>
+        </div>
+        
+        <h2>Kreiranje vlastitog zvuka</h2>
+        
+        <div class="step">
+            <h3>Metoda 1: Modifikacija postojećeg zvuka</h3>
+            <p><strong>Najlakši način za početak:</strong></p>
+            <ol>
+                <li>Odaberite zvuk koji vam je najbliži željenom</li>
+                <li>Pritisnite "FUNCTION" → "Voice Edit"</li>
+                <li>Izmijenite parametre:</li>
+                <ul>
+                    <li>Filter (cutoff, resonance)</li>
+                    <li>Envelope (attack, decay, sustain, release)</li>
+                    <li>Efekte (reverb, chorus)</li>
+                    <li>Glasnoću svakog elementa</li>
+                </ul>
+                <li>Spremite kao novi User Voice</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Metoda 2: Kreiranje Layer zvuka</h3>
+            <p><strong>Kombinacija više zvukova:</strong></p>
+            <ol>
+                <li>Voice Edit → Layer</li>
+                <li>Odaberite prvi zvuk</li>
+                <li>Odaberite drugi zvuk</li>
+                <li>Podesite glasnoću svakog zvuka</li>
+                <li>Podesite panoramu (pan) za stereo efekt</li>
+                <li>Dodajte efekte</li>
+                <li>Spremite</li>
+            </ol>
+            <div class="tip">
+                <p><strong>Savjet:</strong> Kombinirajte komplementarne zvukove. Na primjer, Piano (bogati u srednjim frekvencijama) + Strings (bogati u visokim) = puni, ljepši zvuk.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h3>Metoda 3: Split Voice kreiranje</h3>
+            <p><strong>Različiti zvukovi za različite zone:</strong></p>
+            <ol>
+                <li>Voice Edit → Split</li>
+                <li>Postavite Split Point (točka podjele)</li>
+                <li>Odaberite Lower Voice (lijevo)</li>
+                <li>Odaberite Upper Voice (desno)</li>
+                <li>Podesite glasnoću za svaki dio</li>
+                <li>Dodajte efekte</li>
+                <li>Spremite</li>
+            </ol>
+        </div>
+        
+        <h2>Voice Editor - detaljno</h2>
+        
+        <div class="step">
+            <h3>Common parametri (Zajednički)</h3>
+            <p>Parametri koji utječu na cijeli zvuk:</p>
+            <table>
+                <tr>
+                    <th>Parametar</th>
+                    <th>Opis</th>
+                </tr>
+                <tr>
+                    <td>Volume</td>
+                    <td>Ukupna glasnoća zvuka</td>
+                </tr>
+                <tr>
+                    <td>Pan</td>
+                    <td>Pozicija u stereo prostoru (lijevo/desno)</td>
+                </tr>
+                <tr>
+                    <td>Reverb Send</td>
+                    <td>Koliko reverb efekta primjenjuje se</td>
+                </tr>
+                <tr>
+                    <td>Chorus Send</td>
+                    <td>Koliko chorus efekta primjenjuje se</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="step">
+            <h3>Element parametri</h3>
+            <p>Svaki element zvuka ima:</p>
+            <ul>
+                <li><strong>Waveform</strong> - osnovni zvuk (može se mijenjati ako je moguće)</li>
+                <li><strong>Filter Cutoff</strong> - odsijecanje frekvencija (svjetlije/tamnije)</li>
+                <li><strong>Filter Resonance</strong> - naglasak na cutoff frekvenciji</li>
+                <li><strong>EG (Envelope Generator)</strong>:</li>
+                <ul>
+                    <li><strong>Attack</strong> - koliko brzo zvuk dosegne punu glasnoću</li>
+                    <li><strong>Decay</strong> - koliko brzo padne nakon attack-a</li>
+                    <li><strong>Sustain</strong> - razina dok držite tipku</li>
+                    <li><strong>Release</strong> - koliko brzo se zvuk gasi nakon puštanja tipke</li>
+                </ul>
+                <li><strong>Volume</strong> - glasnoća elementa</li>
+                <li><strong>Detune</strong> - fino podešavanje visine tona</li>
+            </ul>
+        </div>
+        
+        <h2>Praktični primjeri</h2>
+        
+        <div class="step">
+            <h3>Primjer 1: "Warm Piano"</h3>
+            <p>Kreiranje toplijeg, mekšeg piano zvuka:</p>
+            <ol>
+                <li>Odaberite "Grand Piano"</li>
+                <li>Voice Edit → Element</li>
+                <li>Smanjite Filter Cutoff (tamniji zvuk)</li>
+                <li>Povećajte Attack malo (meksi početak)</li>
+                <li>Dodajte malo Reverb</li>
+                <li>Spremite kao "Warm Piano"</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Primjer 2: "Pad + Lead" Layer</h3>
+            <p>Kombinacija pozadinskog i vodećeg zvuka:</p>
+            <ol>
+                <li>Voice Edit → Layer</li>
+                <li>Odaberite "Strings" kao prvi zvuk (glaznoća 70%)</li>
+                <li>Odaberite "Lead Synth" kao drugi zvuk (glasnoća 100%)</li>
+                <li>Podesite pan: Strings lijevo (-30), Lead centar</li>
+                <li>Dodajte Chorus na Strings</li>
+                <li>Spremite</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Primjer 3: "Bass + Piano" Split</h3>
+            <p>Bas lijevo, Piano desno:</p>
+            <ol>
+                <li>Voice Edit → Split</li>
+                <li>Postavite Split Point na C4 (sredina)</li>
+                <li>Lower Voice: "Electric Bass"</li>
+                <li>Upper Voice: "Grand Piano"</li>
+                <li>Podesite glasnoće</li>
+                <li>Spremite</li>
+            </ol>
+        </div>
+        
+        <h2>Napredne tehnike</h2>
+        
+        <div class="step">
+            <h3>Velocity Switched Elements</h3>
+            <p>Različiti elementi aktiviraju se ovisno o tome koliko snažno pritisnete tipku:</p>
+            <ul>
+                <li>Lagani pritisak → meki zvuk</li>
+                <li>Snažan pritisak → agresivniji zvuk</li>
+            </ul>
+            <p>Omogućava vam prirodniji, dinamičniji zvuk.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Oscillator Sync</h3>
+            <p>Napredna tehnika za sintetizirane zvukove - sinkronizacija više oscilatora za jedinstvene zvukove.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Filter Modulation</h3>
+            <p>Modulacija filtera pomoću LFO (Low Frequency Oscillator) ili Envelopea stvara dinamične, živahne zvukove.</p>
+        </div>
+        
+        <div class="tip">
+            <h3>Koristan savjet - Experimentation</h3>
+            <p>Ne bojte se eksperimentirati! Najbolji zvukovi često nastaju slučajno. Podesite parametre i slušajte što se događa. Ako nešto ne zvuči dobro, jednostavno vratite se na prethodne postavke.</p>
+        </div>
+        
+        <h2>Spremanje i organizacija</h2>
+        
+        <div class="step">
+            <h3>User Voice memorija</h3>
+            <p>Vaši prilagođeni zvukovi spremaju se u:</p>
+            <ul>
+                <li><strong>User Voice Bank</strong> - interno spremište klavijature</li>
+                <li><strong>USB</strong> - za backup i prijenos</li>
+            </ul>
+            <p><strong>Format:</strong> .vce ili .uvn datoteke (ovisno o modelu)</p>
+        </div>
+        
+        <div class="info">
+            <h3>Organizacija</h3>
+            <p>Organizirajte svoje zvukove po kategorijama i dodajte opisna imena. Na primjer:</p>
+            <ul>
+                <li>"Piano_Warm_Custom"</li>
+                <li>"Layer_Strings_Pad"</li>
+                <li>"Split_Bass_Piano"</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <h3>Backup vaših zvukova</h3>
+            <p>Uvijek napravite backup vaših prilagođenih zvukova na USB memoriju. Ako se nešto dogodi s klavijaturom ili resetirate postavke, nećete izgubiti svoj rad.</p>
+        </div>
+    </div>
+</body>
+</html>
+

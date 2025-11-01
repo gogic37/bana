@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roland - Sempliranje</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #f58d1f;
+            border-bottom: 3px solid #f58d1f;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #f58d1f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #f58d1f;
+            border-radius: 5px;
+        }
+        .tip {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #dc3545;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="roland.html" class="back-link">← Povratak na Roland kategorije</a>
+        
+        <h1>Sempliranje na Roland klavijaturama</h1>
+        
+        <p>Sempliranje (sampling) omogućava vam da snimite zvukove i koristite ih u vašim Tone-ovima ili Rhythm-ima. Roland klavijature imaju napredne mogućnosti sempliranja, posebno za kreiranje multi-sampled Tone-ova.</p>
+        
+        <h2>Što je sempliranje?</h2>
+        
+        <div class="step">
+            <h3>Definicija</h3>
+            <p><strong>Sample</strong> je digitalni zapis zvuka. Na Roland klavijaturama možete:</p>
+            <ul>
+                <li>Snimiti vlastite zvukove (mikrofon, linijski ulaz)</li>
+                <li>Učitati WAV datoteke</li>
+                <li>Koristiti sample-e u Tone-ovima</li>
+                <li>Koristiti sample-e u Rhythm-ima</li>
+                <li>Kreirati multi-sampled Tone-ove</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Zašto semplirati?</h3>
+            <ul>
+                <li><strong>Jedinstveni zvukovi</strong> - dodajte vlastite zvukove</li>
+                <li><strong>Multi-sampling</strong> - prirodniji zvuk kroz cijeli raspon</li>
+                <li><strong>Personalizacija</strong> - koristite svoje glasove, zvukove instrumenata</li>
+                <li><strong>Kreativnost</strong> - kombinujte različite zvukove</li>
+            </ul>
+        </div>
+        
+        <h2>Roland pristup sempliranju</h2>
+        
+        <div class="info">
+            <h3>Multi-sampling</h3>
+            <p>Roland posebno dobro podržava <strong>multi-sampling</strong>:</p>
+            <ul>
+                <li>Različiti sample-i za različite note</li>
+                <li>Priojeđniji zvuk kroz cijeli raspon tipkovnice</li>
+                <li>Možete mapirati sample-e na određene note</li>
+                <li>Roland automatski interpolira između sample-a</li>
+            </ul>
+        </div>
+        
+        <h2>Snimanje sample-a</h2>
+        
+        <div class="step">
+            <h3>Pristup Sample Editoru</h3>
+            <ol>
+                <li>Pritisnite "MENU" → "Sample" ili "SAMPLE EDITOR"</li>
+                <li>Odaberite "Record New Sample"</li>
+                <li>Prije nego što počnete, provjerite postavke</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>1. Izvor zvuka</h3>
+            <p>Odaberite izvor zvuka koji želite snimiti:</p>
+            <ul>
+                <li><strong>Mikrofon</strong> - povezani mikrofon</li>
+                <li><strong>Audio In</strong> - linijski ulaz</li>
+                <li><strong>USB Audio</strong> - audio s USB memorije</li>
+                <li><strong>Internal</strong> - zvuk same klavijature</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>2. Postavke snimanja</h3>
+            <p>Podesite parametre:</p>
+            <ul>
+                <li><strong>Sample Rate</strong> - 44.1kHz ili 48kHz (viša = bolja kvaliteta)</li>
+                <li><strong>Bit Depth</strong> - 16-bit ili 24-bit</li>
+                <li><strong>Format</strong> - Mono ili Stereo</li>
+                <li><strong>Input Level</strong> - glasnoća ulaznog signala</li>
+            </ul>
+            <div class="warning">
+                <p><strong>Važno:</strong> Pazite na input level! Previše glasan signal će stvoriti distorziju.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h3>3. Snimanje</h3>
+            <ol>
+                <li>Pritisnite "Record" da počnete snimanje</li>
+                <li>Reproducirajte zvuk koji želite snimiti</li>
+                <li>Pratite trajanje i memoriju</li>
+                <li>Pritisnite "Stop" kada završite</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>4. Obrada sample-a</h3>
+            <p>Nakon snimanja, možete obraditi sample:</p>
+            <ul>
+                <li><strong>Trim</strong> - uklonite tišinu na početku/kraju</li>
+                <li><strong>Normalize</strong> - automatsko povećanje glasnoće</li>
+                <li><strong>Fade In/Out</strong> - glatko povećanje/smanjenje</li>
+                <li><strong>Reverse</strong> - okrenite sample unatrag</li>
+                <li><strong>Time Stretch</strong> - promijenite duljinu</li>
+                <li><strong>Pitch Shift</strong> - promijenite visinu</li>
+            </ul>
+        </div>
+        
+        <h2>Kreiranje multi-sampled Tone-a</h2>
+        
+        <div class="step">
+            <h3>Multi-sampling proces</h3>
+            <p>Za prirodniji zvuk, snimite više sample-a za različite note:</p>
+            <ol>
+                <li>Snimite sample za različite note (npr. svaka 4. nota)</li>
+                <li>Učitajte sve sample-e u Sample Editor</li>
+                <li>Tone Edit → Sample Mapping</li>
+                <li>Mapirajte svaki sample na odgovarajuće note</li>
+                <li>Podesite Key Range za svaki sample</li>
+                <li>Roland će automatski interpolirati između sample-a</li>
+            </ol>
+        </div>
+        
+        <div class="tip">
+            <h3>Savjet za multi-sampling</h3>
+            <p>Snimite sample-e za svaku 3-4 notu za prirodniji zvuk. Za još bolju kvalitetu, snimite svaku notu, ali to zahtijeva puno memorije.</p>
+        </div>
+        
+        <h2>Učitavanje WAV datoteka</h2>
+        
+        <div class="step">
+            <h3>Podržani formati</h3>
+            <p>Roland klavijature podržavaju:</p>
+            <ul>
+                <li><strong>WAV</strong> - najbolja kvaliteta, bez kompresije</li>
+                <li><strong>AIFF</strong> - Mac format, visoka kvaliteta</li>
+            </ul>
+            <p><strong>Preporučene postavke:</strong> 44.1kHz, 16-bit ili 24-bit</p>
+        </div>
+        
+        <div class="step">
+            <h3>Učitavanje s USB-a</h3>
+            <ol>
+                <li>Kopirajte WAV datoteku na USB memoriju</li>
+                <li>Umetnite USB u klavijaturu</li>
+                <li>Sample Editor → Load</li>
+                <li>Odaberite datoteku s USB-a</li>
+                <li>Datoteka će se učitati kao sample</li>
+            </ol>
+        </div>
+        
+        <h2>Korištenje sample-a u Tone-ovima</h2>
+        
+        <div class="step">
+            <h3>Kreiranje Tone-a s Sample-om</h3>
+            <ol>
+                <li>Snimite ili učitajte sample</li>
+                <li>Tone Edit → Oscillator</li>
+                <li>Odaberite "Sample" kao Oscillator source</li>
+                <li>Odaberite svoj sample</li>
+                <li>Podesite parametre (Filter, EG, LFO, itd.)</li>
+                <li>Za loop sample-e, uključite Loop i postavite Loop Points</li>
+                <li>Spremite kao novi User Tone</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Loop sample-i</h3>
+            <p>Za sample-e koji se ponavljaju (pad-ovi, strings):</p>
+            <ul>
+                <li>Postavite Loop Start i Loop End točke</li>
+                <li>Testirajte loop - trebao bi se glatko ponavljati</li>
+                <li>Podesite Crossfade ako je dostupno</li>
+                <li>Uključite Loop u Tone Editoru</li>
+            </ul>
+        </div>
+        
+        <h2>Upravljanje memorijom</h2>
+        
+        <div class="warning">
+            <h3>Memorija</h3>
+            <p>Sample-i mogu zauzeti puno memorije! Pazite na:</p>
+            <ul>
+                <li>Duljinu sample-a</li>
+                <li>Sample rate (niži = manje memorije)</li>
+                <li>Format (Mono = manje memorije)</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Optimizacija memorije</h3>
+            <ul>
+                <li>Koristite Mono umjesto Stereo kada je moguće</li>
+                <li>Smanjite Sample Rate ako kvaliteta dozvoljava</li>
+                <li>Obrezite nepotrebne dijelove</li>
+                <li>Brišite neiskorištene sample-e</li>
+            </ul>
+        </div>
+        
+        <h2>Koristan savjeti</h2>
+        
+        <div class="tip">
+            <h3>Kvalitetna snimka</h3>
+            <p>Za najbolju kvalitetu snimite u tihoj prostoriji, koristite kvalitetan mikrofon, i podesite input level pravilno.</p>
+        </div>
+        
+        <div class="tip">
+            <h3>Backup</h3>
+            <p>Vaše sample-e možete spremiti na USB. Organizirajte ih u mape i napravite backup.</p>
+        </div>
+    </div>
+</body>
+</html>
+

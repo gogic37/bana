@@ -1,0 +1,19 @@
+# General MIDI SF2 Bank Placeholder
+
+This is a placeholder for the General MIDI SoundFont bank.
+
+In a real implementation, this would be a binary .sf2 file containing:
+- 128 General MIDI instrument sounds
+- 1 drum kit
+- Standard GM mapping
+- 16-bit sample resolution
+- Various sample rates
+
+File specifications:
+- Format: SoundFont 2.0 (.sf2)
+- Size: ~2.5 MB
+- Instruments: 128 GM instruments + 1 drum kit
+- Sample rate: 44.1 kHz
+- Bit depth: 16-bit
+
+This file should be replaced with an actual General MIDI SoundFont bank. 

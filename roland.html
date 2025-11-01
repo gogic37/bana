@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roland - Vodič za klavijature</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .nav-title {
+            display: inline-block;
+            padding: 8px 16px;
+            font-weight: 600;
+            color: #000 !important;
+            background: none;
+            cursor: default;
+            text-decoration: none;
+            line-height: 1;
+            white-space: nowrap;
+        }
+        .nav-title:hover {
+            color: #000 !important;
+            background: none;
+        }
+        body {
+            background: url('images/druga.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem 2rem;
+        }
+        .roland-layout {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-top: 32px;
+        }
+        .roland-categories {
+            min-width: 220px;
+            background: #f7f7fa;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            padding: 24px 18px 18px 18px;
+        }
+        .roland-categories h3 {
+            margin-top: 0;
+            font-size: 1.15em;
+            font-weight: 700;
+            color: #2a2a2a;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+        }
+        .roland-categories ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .roland-categories li {
+            font-size: 1.08em;
+            color: #333;
+            padding: 10px 0 10px 8px;
+            border-left: 3px solid #f58d1f;
+            margin-bottom: 6px;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+        .roland-categories li:hover {
+            background: rgba(245, 141, 31, 0.1);
+        }
+        .roland-categories a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .roland-content {
+            flex: 1;
+            padding: 24px;
+            background: #f7f7fa;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        }
+        .roland-content h2 {
+            margin-top: 0;
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #2a2a2a;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .roland-content p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+        .roland-intro {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .roland-intro img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">Midi Connect Portal</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="o-meni.html">O meni</a></li>
+                <li class="dropdown">
+                    <span class="nav-title">Aranžeri</span>
+                    <ul class="dropdown-content">
+                        <li><a href="korg.html">Korg</a></li>
+                        <li><a href="yamaha.html">Yamaha</a></li>
+                        <li><a href="roland.html">Roland</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Stilovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="pop.html">Rumba</a></li>
+                        <li><a href="rock.html">Dvojke</a></li>
+                        <li><a href="jazz.html">Beguine</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Zvukovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="piano.html">Piano</a></li>
+                        <li><a href="orgulje.html">Orgulje</a></li>
+                        <li><a href="sintisajzer.html">Strings</a></li>
+                    </ul>
+                </li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="roland-layout">
+            <aside class="roland-categories">
+                <h3>Kategorije</h3>
+                <ul>
+                    <li><a href="roland-osnove.html">Osnove rada</a></li>
+                    <li><a href="roland-izrada-rhythma.html">Izrada Rhythm-a</a></li>
+                    <li><a href="roland-izrada-tone.html">Izrada Tone-ova</a></li>
+                    <li><a href="roland-tone-editor.html">Tone Editor</a></li>
+                    <li><a href="roland-split-layer.html">Split i Layer</a></li>
+                    <li><a href="roland-sempliranje.html">Sempliranje</a></li>
+                    <li><a href="roland-midi-postavke.html">MIDI postavke</a></li>
+                    <li><a href="roland-napredne-funkcije.html">Napredne funkcije</a></li>
+                </ul>
+            </aside>
+            <div class="roland-content">
+                <div class="roland-intro">
+                    <img src="images/roland-fantom-ex.jpg" alt="Roland klavijatura">
+                    <h2>Dobrodošli u Roland sekciju</h2>
+                    <p>Ovaj vodič će vas provesti kroz sve aspekte rada s Roland aranžerskim klavijaturama, posebno <strong>BK seriju</strong> (BK-3, BK-5, BK-7m, BK-9) i <strong>EA seriju</strong> (EA-7). Roland ima jedinstven pristup kreiranju zvukova i aranžmana koji se razlikuje od Yamaha i Korg klavijatura.</p>
+                    <p><strong>Odaberite kategoriju sa lijeve strane</strong> da saznate više o određenoj temi vezanoj za Roland klavijature.</p>
+                </div>
+                <div class="roland-intro">
+                    <h3>Roland specifičnosti:</h3>
+                    <ul>
+                        <li><strong>Tone</strong> - Roland koristi "Tone" umjesto "Voice" za zvukove</li>
+                        <li><strong>Rhythm</strong> - Roland koristi "Rhythm" umjesto "Style" za aranžmane</li>
+                        <li><strong>ZEN-Core / SuperNATURAL</strong> - Roland sintesna tehnologija</li>
+                        <li><strong>Multi-sampling</strong> - napredni pristup kreiranju zvukova</li>
+                        <li><strong>Live Set</strong> - Roland način spremanja postavki</li>
+                    </ul>
+                </div>
+                <div class="roland-intro">
+                    <h3>Što ćete naučiti:</h3>
+                    <ul>
+                        <li><strong>Osnove rada</strong> - osnovne funkcije Roland klavijatura</li>
+                        <li><strong>Izrada Rhythm-a</strong> - kako kreirati i uređivati Rhythm-e (aranžmane)</li>
+                        <li><strong>Izrada Tone-ova</strong> - kako funkcioniraju i kako se kreiraju Tone-ovi</li>
+                        <li><strong>Tone Editor</strong> - napredno uređivanje Tone-ova</li>
+                        <li><strong>Split i Layer</strong> - Roland pristup kombinaciji zvukova</li>
+                        <li><strong>Sempliranje</strong> - rad s WAV semplovima</li>
+                        <li><strong>MIDI postavke</strong> - povezivanje i kontroliranje</li>
+                        <li><strong>Napredne funkcije</strong> - dodatne mogućnosti</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kontakt</h3>
+                <p><i class="fas fa-envelope"></i> gogic37@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Pratite nas</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/groups/330748004039789" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@gogic37/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Midi Connect Portal. Sva prava pridržana.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

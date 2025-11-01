@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIDI Kontrola - Midi Connect Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .nav-title {
+            display: block;
+            padding: 8px 16px;
+            font-weight: 600;
+            color: #000 !important;
+            background: none;
+            cursor: default;
+            text-decoration: none;
+        }
+        .nav-title:hover {
+            color: #000 !important;
+            background: none;
+        }
+        body {
+            background: url('images/druga.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+        
+        .scroll-indicator {
+            margin-top: 2rem;
+            text-align: center;
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-indicator i {
+            font-size: 2rem;
+            color: white;
+            opacity: 0.8;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-indicator i:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .virtual-piano {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+        
+        .piano-keys {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            position: relative;
+            height: 200px;
+        }
+        
+        .white-key {
+            width: 60px;
+            height: 200px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 0 0 5px 5px;
+            margin: 0 1px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            transition: background-color 0.1s;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .white-key:hover {
+            background: #f0f0f0;
+        }
+        
+        .white-key.active {
+            background: #007bff;
+            color: white;
+        }
+        
+        .black-key {
+            width: 40px;
+            height: 120px;
+            background: #333;
+            border-radius: 0 0 5px 5px;
+            position: absolute;
+            z-index: 2;
+            cursor: pointer;
+            transition: background-color 0.1s;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 10px;
+            font-weight: bold;
+            color: white;
+            top: 0;
+        }
+        
+        .black-key:hover {
+            background: #555;
+        }
+        
+        .black-key.active {
+            background: #007bff;
+        }
+        
+        /* Pozicioniranje crnih tipki između bijelih tipki */
+        .black-key:nth-child(2) { left: 45px; }
+        .black-key:nth-child(4) { left: 105px; }
+        .black-key:nth-child(7) { left: 225px; }
+        .black-key:nth-child(9) { left: 285px; }
+        .black-key:nth-child(11) { left: 345px; }
+        
+        /* Dodatni stilovi za piano */
+        .piano-keys {
+            position: relative;
+            width: 482px;
+            height: 200px;
+            margin: 2rem auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px 0 0 0;
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+        }
+        .white-keys {
+            display: flex;
+            position: relative;
+            z-index: 1;
+        }
+        .white-key {
+            width: 60px;
+            height: 180px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 0 0 5px 5px;
+            margin: 0 1px;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .white-key.active {
+            background: #007bff;
+            color: white;
+        }
+        .white-key:hover {
+            background: #f0f0f0;
+        }
+        .black-keys {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .black-key {
+            width: 40px;
+            height: 120px;
+            background: #333;
+            border-radius: 0 0 5px 5px;
+            position: absolute;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 10px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            pointer-events: auto;
+        }
+        .black-key.active {
+            background: #007bff;
+        }
+        .black-key:hover {
+            background: #555;
+        }
+        
+        /* Responsive dizajn za piano */
+        @media (max-width: 768px) {
+            .piano-keys {
+                transform: scale(0.8);
+                margin: 1rem -2rem;
+            }
+            
+            .white-key {
+                width: 50px;
+                height: 160px;
+            }
+            
+            .black-key {
+                width: 30px;
+                height: 100px;
+            }
+            
+            .black-key:nth-child(2) { left: 35px; }
+            .black-key:nth-child(4) { left: 85px; }
+            .black-key:nth-child(7) { left: 185px; }
+            .black-key:nth-child(9) { left: 235px; }
+            .black-key:nth-child(11) { left: 285px; }
+        }
+        
+        .piano-instructions {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #007bff;
+        }
+        
+        .piano-instructions h4 {
+            margin: 0 0 0.5rem 0;
+            color: #333;
+        }
+        
+        .piano-instructions p {
+            margin: 0.25rem 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .piano-instructions strong {
+            color: #007bff;
+        }
+        
+        .midi-controls-advanced {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .control-panel {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slider-container {
+            margin: 1rem 0;
+        }
+        
+        .slider-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #007bff;
+            cursor: pointer;
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #007bff;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .sf2-selection {
+            margin-bottom: 1.5rem;
+        }
+        
+        .sf2-select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .sf2-info {
+            font-size: 0.8rem;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+        
+        .sf2-info span {
+            display: block;
+        }
+        
+        .file-upload {
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            margin: 1rem 0;
+            transition: border-color 0.3s;
+        }
+        
+        .file-upload:hover {
+            border-color: #007bff;
+        }
+        
+        .file-upload input {
+            display: none;
+        }
+        
+        .file-upload label {
+            cursor: pointer;
+            color: #007bff;
+            font-weight: 500;
+        }
+        
+        .playback-controls {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn-play {
+            background: #28a745;
+        }
+        
+        .btn-play:hover {
+            background: #218838;
+        }
+        
+        .btn-pause {
+            background: #ffc107;
+            color: #212529;
+        }
+        
+        .btn-pause:hover {
+            background: #e0a800;
+        }
+        
+        .btn-stop {
+            background: #dc3545;
+        }
+        
+        .btn-stop:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Transparent Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">Midi Connect Portal</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="o-meni.html">O meni</a></li>
+                <li class="dropdown">
+                    <span class="nav-title">Klavijature</span>
+                    <ul class="dropdown-content">
+                        <li><a href="korg.html">Korg</a></li>
+                        <li><a href="yamaha.html">Yamaha</a></li>
+                        <li><a href="roland.html">Roland</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Stilovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="pop.html">Rumba</a></li>
+                        <li><a href="rock.html">Dvojke</a></li>
+                        <li><a href="jazz.html">Beguine</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Zvukovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="piano.html">Piano</a></li>
+                        <li><a href="orgulje.html">Orgulje</a></li>
+                        <li><a href="sintisajzer.html">Strings</a></li>
+                    </ul>
+                </li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>MIDI Kontrola</h1>
+            <p>Napredno upravljanje MIDI uređajima preko web stranice</p>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- MIDI Status Section -->
+    <section class="midi-section">
+        <div class="container">
+            <h2>Status MIDI uređaja</h2>
+            <div class="midi-controls">
+                <div class="midi-status">
+                    <h3>Status MIDI uređaja</h3>
+                    <div id="midi-status" class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Nije povezano</span>
+                    </div>
+                    <button id="connect-midi" class="btn btn-primary">Poveži MIDI uređaj</button>
+                </div>
+                
+                <div class="midi-devices">
+                    <h3>Dostupni uređaji</h3>
+                    <select id="midi-inputs" class="midi-select">
+                        <option value="">Odaberite MIDI ulaz...</option>
+                    </select>
+                    <select id="midi-outputs" class="midi-select">
+                        <option value="">Odaberite MIDI izlaz...</option>
+                    </select>
+                </div>
+
+                <div class="midi-control-panel">
+                    <h3>Osnovna kontrola</h3>
+                    <div class="control-buttons">
+                        <button id="play-note" class="btn btn-secondary">Sviraj notu (C4)</button>
+                        <button id="stop-all" class="btn btn-secondary">Zaustavi sve</button>
+                        <button id="change-program" class="btn btn-secondary">Promijeni program</button>
+                    </div>
+                    
+                    <div class="midi-monitor">
+                        <h4>MIDI Monitor</h4>
+                        <div id="midi-log" class="log-container"></div>
+                        <button id="clear-log" class="btn btn-small">Očisti log</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Piano Section -->
+    <section class="virtual-piano">
+        <div class="container">
+            <h2>Virtualno Piano</h2>
+            <p>Kliknite na tipke za sviranje nota ili koristite tipkovnicu</p>
+            
+            <div class="piano-instructions">
+                <h4>Tipkovnica:</h4>
+                <p><strong>Bijele tipke:</strong> A, S, D, F, G, H, J, K</p>
+                <p><strong>Crne tipke:</strong> W, E, T, Y, U</p>
+                <p><strong>Mapiranje:</strong> A=C, W=C#, S=D, E=D#, D=E, F=F, T=F#, G=G, Y=G#, H=A, U=A#, J=B, K=C</p>
+            </div>
+            
+            <div class="piano-keys">
+                <div class="white-keys">
+                    <div class="white-key" data-note="60">C</div>
+                    <div class="white-key" data-note="62">D</div>
+                    <div class="white-key" data-note="64">E</div>
+                    <div class="white-key" data-note="65">F</div>
+                    <div class="white-key" data-note="67">G</div>
+                    <div class="white-key" data-note="69">A</div>
+                    <div class="white-key" data-note="71">B</div>
+                    <div class="white-key" data-note="72">C</div>
+                </div>
+                <div class="black-keys">
+                    <div class="black-key" data-note="61" style="left: 42px;">C#</div>
+                    <div class="black-key" data-note="63" style="left: 102px;">D#</div>
+                    <div class="black-key" data-note="66" style="left: 222px;">F#</div>
+                    <div class="black-key" data-note="68" style="left: 282px;">G#</div>
+                    <div class="black-key" data-note="70" style="left: 342px;">A#</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Controls Section -->
+    <section class="midi-section">
+        <div class="container">
+            <h2>Napredne kontrole</h2>
+            <div class="midi-controls-advanced">
+                <div class="control-panel">
+                    <h3>Kontrola glasnoće</h3>
+                    <div class="slider-container">
+                        <label for="volume-slider">Glasnoća</label>
+                        <input type="range" id="volume-slider" class="slider" min="0" max="127" value="100">
+                        <span id="volume-value">100</span>
+                    </div>
+                    <div class="slider-container">
+                        <label for="pan-slider">Pan</label>
+                        <input type="range" id="pan-slider" class="slider" min="0" max="127" value="64">
+                        <span id="pan-value">64</span>
+                    </div>
+                    <div class="slider-container">
+                        <label for="reverb-slider">Reverb</label>
+                        <input type="range" id="reverb-slider" class="slider" min="0" max="127" value="0">
+                        <span id="reverb-value">0</span>
+                    </div>
+                </div>
+
+                <div class="control-panel">
+                    <h3>MIDI File Playback</h3>
+                    <div class="sf2-selection">
+                        <label for="sf2-bank">Odaberite SF2 banku:</label>
+                        <select id="sf2-bank" class="sf2-select">
+                            <option value="">Učitavanje SF2 banaka...</option>
+                        </select>
+                        <div class="sf2-info">
+                            <span id="sf2-name">Nije odabrana banka</span>
+                            <span id="sf2-size"></span>
+                        </div>
+                    </div>
+                    <div class="file-upload">
+                        <input type="file" id="midi-file" accept=".mid,.midi">
+                        <label for="midi-file">
+                            <i class="fas fa-upload"></i>
+                            <br>Odaberite MIDI datoteku
+                        </label>
+                    </div>
+                    <div class="playback-controls">
+                        <button id="play-file" class="btn btn-play">Play</button>
+                        <button id="pause-file" class="btn btn-pause">Pause</button>
+                        <button id="stop-file" class="btn btn-stop">Stop</button>
+                    </div>
+                    <div id="file-info"></div>
+                </div>
+
+                <div class="control-panel">
+                    <h3>Program i kanal</h3>
+                    <div class="slider-container">
+                        <label for="program-slider">Program (0-127)</label>
+                        <input type="range" id="program-slider" class="slider" min="0" max="127" value="0">
+                        <span id="program-value">0</span>
+                    </div>
+                    <div class="slider-container">
+                        <label for="channel-slider">Kanal (1-16)</label>
+                        <input type="range" id="channel-slider" class="slider" min="1" max="16" value="1">
+                        <span id="channel-value">1</span>
+                    </div>
+                    <button id="apply-program" class="btn btn-secondary">Primijeni program</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kontakt</h3>
+                <p><i class="fas fa-envelope"></i> gogic37@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Pratite nas</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/groups/330748004039789" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@gogic37/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Midi Connect Portal. Sva prava pridržana.</p>
+        </div>
+    </footer>
+
+    <script src="midi-controller.js"></script>
+    <script src="midi-advanced.js"></script>
+    <script src="sf2-manager.js"></script>
+    <script>
+        // Scroll indicator functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            
+            scrollIndicator.addEventListener('click', function() {
+                const nextSection = document.querySelector('.midi-section');
+                if (nextSection) {
+                    nextSection.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

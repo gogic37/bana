@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamaha - MIDI postavke</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #e63946;
+            border-bottom: 3px solid #e63946;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #e63946;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #e63946;
+            border-radius: 5px;
+        }
+        .tip {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+        }
+        .info {
+            background: #d1ecf1;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #17a2b8;
+            border-radius: 5px;
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="yamaha.html" class="back-link">← Povratak na Yamaha kategorije</a>
+        
+        <h1>MIDI postavke na Yamaha klavijaturama</h1>
+        
+        <p>MIDI (Musical Instrument Digital Interface) omogućava vam povezivanje i komunikaciju između različitih muzičkih uređaja. Ovaj vodič će vas upoznati s MIDI postavkama na Yamaha klavijaturama.</p>
+        
+        <h2>Što je MIDI?</h2>
+        
+        <div class="info">
+            <h3>Definicija</h3>
+            <p><strong>MIDI</strong> je protokol za komunikaciju između muzičkih instrumenata. Umjesto audio signala, MIDI prenosi informacije o:</p>
+            <ul>
+                <li>Koje note se sviraju</li>
+                <li>Kada se note pritišću i puštaju</li>
+                <li>Koliko snažno se pritišće (velocity)</li>
+                <li>Kontrolne promjene (glasnoća, efekti, itd.)</li>
+            </ul>
+            <p><strong>Prednost:</strong> MIDI datoteke su male i mogu se lako uređivati.</p>
+        </div>
+        
+        <h2>MIDI konektori</h2>
+        
+        <div class="step">
+            <h3>Fizički konektori</h3>
+            <p>Yamaha klavijature obično imaju:</p>
+            <ul>
+                <li><strong>MIDI IN</strong> - prima MIDI signale</li>
+                <li><strong>MIDI OUT</strong> - šalje MIDI signale</li>
+                <li><strong>MIDI THRU</strong> - prosljeđuje MIDI signale (neki modeli)</li>
+                <li><strong>USB TO HOST</strong> - USB konektor za MIDI preko USB-a</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>USB MIDI</h3>
+            <p>Modernije Yamaha klavijature koriste USB za MIDI:</p>
+            <ul>
+                <li>Lakše povezivanje s računalima</li>
+                <li>Nije potrebno posebno MIDI sučelje</li>
+                <li>Veća brzina prijenosa</li>
+            </ul>
+        </div>
+        
+        <h2>MIDI kanali</h2>
+        
+        <div class="step">
+            <h3>Što su MIDI kanali?</h3>
+            <p>MIDI kanali omogućavaju kontrolu različitih instrumenata nezavisno:</p>
+            <ul>
+                <li>Postoji 16 MIDI kanala (1-16)</li>
+                <li>Svaki kanal može imati svoj instrument</li>
+                <li>Možete kontrolirati više instrumenata istovremeno</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Korištenje kanala na Yamaha klavijaturi</h3>
+            <p>Yamaha klavijature koriste MIDI kanale za:</p>
+            <ul>
+                <li><strong>Right 1</strong> - obično kanal 1</li>
+                <li><strong>Right 2</strong> - obično kanal 2</li>
+                <li><strong>Left</strong> - obično kanal 3</li>
+                <li><strong>Style Parts</strong> - kanali 9-16</li>
+                <li><strong>Multi-Pad</strong> - posebni kanali</li>
+            </ul>
+        </div>
+        
+        <h2>MIDI postavke</h2>
+        
+        <div class="step">
+            <h3>Pristup MIDI postavkama</h3>
+            <ol>
+                <li>Pritisnite <code>FUNCTION</code></li>
+                <li>Odaberite <code>MIDI</code> ili <code>MIDI Settings</code></li>
+                <li>Ili <code>MENU</code> → <code>Utility</code> → <code>MIDI</code></li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Transmit Channel (Slanje)</h3>
+            <p>Postavka koja kontrolira na koji kanal se šalju MIDI poruke:</p>
+            <ul>
+                <li><strong>Right 1 Channel</strong> - kanal za Right 1 voice</li>
+                <li><strong>Right 2 Channel</strong> - kanal za Right 2 voice</li>
+                <li><strong>Left Channel</strong> - kanal za Left voice</li>
+            </ul>
+            <p><strong>Savjet:</strong> Postavite različite kanale za svaki voice da biste ih mogli kontrolirati zasebno.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Receive Channel (Primanje)</h3>
+            <p>Postavka koja kontrolira s kojih kanala klavijatura prima MIDI:</p>
+            <ul>
+                <li><strong>Voice Receive Channels</strong> - kanali na kojima prima note</li>
+                <li><strong>Style Receive Channel</strong> - kanal za kontrolu stila</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Local Control</h3>
+            <p>Kontrolira da li klavijatura direktno kontrolira svoje interne zvukove:</p>
+            <ul>
+                <li><strong>ON</strong> - tipkovnica direktno kontrolira zvukove (normalno)</li>
+                <li><strong>OFF</strong> - tipkovnica ne kontrolira direktno (korisno za DAW kontrolu)</li>
+            </ul>
+            <p><strong>Kada OFF:</strong> Tipkovnica šalje MIDI, ali zvukovi se aktiviraju samo preko MIDI IN-a.</p>
+        </div>
+        
+        <div class="step">
+            <h3>MIDI Clock</h3>
+            <p>Kontrolira sinkronizaciju tempa:</p>
+            <ul>
+                <li><strong>Internal</strong> - klavijatura kontrolira tempo</li>
+                <li><strong>External</strong> - klavijatura prima tempo iz vanjskog uređaja</li>
+                <li><strong>Auto</strong> - automatski detektira</li>
+            </ul>
+        </div>
+        
+        <h2>Povezivanje s računalom</h2>
+        
+        <div class="step">
+            <h3>USB konekcija</h3>
+            <ol>
+                <li>Povežite Yamaha klavijaturu s računalom preko USB kabela</li>
+                <li>Instalirajte potrebne drajvere (ako je potrebno)</li>
+                <li>Na računalu, otvorite DAW (Digital Audio Workstation) ili MIDI software</li>
+                <li>Odaberite Yamaha klavijaturu kao MIDI ulaz/izlaz</li>
+            </ol>
+        </div>
+        
+        <div class="info">
+            <h3>Drajveri</h3>
+            <p>Većina modernih Yamaha klavijatura koristi generički USB MIDI driver koji dolazi s Windows/Mac OS-om. Za neke modele možda ćete trebati posebne drajvere s Yamaha web stranice.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Podešavanje u DAW-u</h3>
+            <p>U vašem DAW-u (Cubase, Logic, Ableton, itd.):</p>
+            <ol>
+                <li>Postavke → MIDI Devices</li>
+                <li>Omogućite Yamaha klavijaturu kao Input i Output</li>
+                <li>Kreirajte MIDI track</li>
+                <li>Odaberite Yamaha kao Input za snimanje</li>
+                <li>Odaberite Yamaha kao Output za reprodukciju</li>
+            </ol>
+        </div>
+        
+        <h2>Korištenje kao MIDI kontroler</h2>
+        
+        <div class="step">
+            <h3>MIDI Controller Mode</h3>
+            <p>Yamaha klavijature mogu se koristiti kao MIDI kontroler za:</p>
+            <ul>
+                <li>Kontroliranje software sintisajzera</li>
+                <li>Snimanje MIDI nota u DAW-u</li>
+                <li>Kontroliranje efekt plug-in-ova</li>
+                <li>Kontroliranje drugih MIDI uređaja</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Postavke za Controller Mode</h3>
+            <ol>
+                <li><code>FUNCTION</code> → <code>MIDI</code></li>
+                <li>Postavite Transmit Channels (obično 1)</li>
+                <li>Postavite <code>Local Control OFF</code> ako želite isključiti interne zvukove</li>
+                <li>Omogućite slanje kontrolnih promjena (CC messages)</li>
+            </ol>
+        </div>
+        
+        <h2>MIDI Control Change (CC) messages</h2>
+        
+        <div class="step">
+            <h3>Što su CC messages?</h3>
+            <p>Control Change poruke omogućavaju kontrolu različitih parametara:</p>
+            <ul>
+                <li><strong>CC 1</strong> - Modulation (modulacija)</li>
+                <li><strong>CC 7</strong> - Volume (glasnoća)</li>
+                <li><strong>CC 10</strong> - Pan (panorama)</li>
+                <li><strong>CC 11</strong> - Expression (ekspresija)</li>
+                <li><strong>CC 64</strong> - Sustain Pedal (sustain pedal)</li>
+                <li><strong>CC 91</strong> - Reverb Send</li>
+                <li><strong>CC 93</strong> - Chorus Send</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Slanje CC messages</h3>
+            <p>Yamaha klavijature automatski šalju CC messages kada:</p>
+            <ul>
+                <li>Pomerate tipke ili kontrola</li>
+                <li>Koristite sustain pedal</li>
+                <li>Mijenjate parametre u realnom vremenu</li>
+            </ul>
+        </div>
+        
+        <h2>MIDI datoteke</h2>
+        
+        <div class="step">
+            <h3>Reprodukcija MIDI datoteka</h3>
+            <p>Yamaha klavijature mogu reproducirati MIDI datoteke:</p>
+            <ol>
+                <li>Kopirajte .mid datoteku na USB memoriju</li>
+                <li>Umetnite USB u klavijaturu</li>
+                <li><code>MENU</code> → <code>Song</code> → <code>Load MIDI</code></li>
+                <li>Odaberite datoteku i reproducirajte</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Snimanje MIDI datoteka</h3>
+            <p>Možete snimiti svoju svirku kao MIDI datoteku:</p>
+            <ol>
+                <li><code>MENU</code> → <code>Song</code> → <code>Record</code></li>
+                <li>Započnite snimanje</li>
+                <li>Svirajte</li>
+                <li>Zaustavite snimanje</li>
+                <li>Spremite kao .mid datoteku</li>
+            </ol>
+        </div>
+        
+        <h2>Style i MIDI</h2>
+        
+        <div class="step">
+            <h3>MIDI kanali u Style-ovima</h3>
+            <p>Yamaha stilovi koriste MIDI kanale za različite Style Parts:</p>
+            <ul>
+                <li><strong>Part 1-8</strong> - svaki koristi svoj kanal (obično 9-16)</li>
+                <li><strong>Drum Part</strong> - obično kanal 10 (GM standard)</li>
+                <li><strong>Bass Part</strong> - obično kanal 9</li>
+                <li>Ostali Parts - raspoređeni na preostale kanale</li>
+            </ul>
+        </div>
+        
+        <div class="info">
+            <h3>GM Standard</h3>
+            <p>Yamaha klavijature prate GM (General MIDI) standard, što znači da će MIDI datoteke koje slijede GM standard zvučati kako treba na vašoj klavijaturi.</p>
+        </div>
+        
+        <h2>Rešavanje problema</h2>
+        
+        <div class="step">
+            <h3>Klavijatura ne šalje MIDI</h3>
+            <ul>
+                <li>Provjerite da je MIDI konektor pravilno spojen</li>
+                <li>Provjerite MIDI postavke (Transmit Channel)</li>
+                <li>Provjerite da je Local Control ON (ako želite interno sviranje)</li>
+                <li>Provjerite da je USB konekcija aktivna</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Klavijatura ne prima MIDI</h3>
+            <ul>
+                <li>Provjerite MIDI IN konektor</li>
+                <li>Provjerite Receive Channel postavke</li>
+                <li>Provjerite da vanjski uređaj šalje na ispravan kanal</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Latency (kašnjenje)</h3>
+            <p>Ako imate kašnjenje između pritiska tipke i zvuka:</p>
+            <ul>
+                <li>Smanjite Buffer Size u DAW-u</li>
+                <li>Koristite ASIO drajvere (Windows)</li>
+                <li>Provjerite USB konekciju</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <h3>Koristan savjet</h3>
+            <p>Prije nastupa, testirajte sve MIDI postavke. Pripremite se za moguće probleme i imajte backup plan (npr. interne zvukove ako MIDI ne radi).</p>
+        </div>
+    </div>
+</body>
+</html>
+

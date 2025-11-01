@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korg - MIDI postavke</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+        .tip {
+            background: #e8f5e8;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #27ae60;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+        }
+        .technical {
+            background: #e3f2fd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+            border-radius: 5px;
+        }
+        .code {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="korg.html" class="back-link">← Povratak na Korg kategorije</a>
+        
+        <h1>MIDI postavke na Korg sintisajzerima</h1>
+        
+        <p>MIDI (Musical Instrument Digital Interface) je standard za komunikaciju između glazbenih uređaja. Korg sintisajzeri nude napredne MIDI mogućnosti koje omogućavaju kontrolu i sinkronizaciju s drugim uređajima.</p>
+        
+        <h2>Što je MIDI?</h2>
+        <p>MIDI je protokol koji omogućava glazbenim uređajima da komuniciraju međusobno. Umjesto slanja audio signala, MIDI šalje digitalne podatke o tome što se događa (koja tipka je pritisnuta, koliko je glasno, itd.).</p>
+        
+        <div class="technical">
+            <h3>Osnovni MIDI koncepti</h3>
+            <p><strong>MIDI kanali:</strong> 16 kanala za različite instrumente ili glasove.</p>
+            <p><strong>MIDI poruke:</strong> Note On/Off, Control Change, Program Change, itd.</p>
+            <p><strong>MIDI konektori:</strong> MIDI In, MIDI Out, MIDI Thru.</p>
+        </div>
+        
+        <h2>Osnovne MIDI postavke</h2>
+        
+        <div class="step">
+            <h3>1. MIDI kanali</h3>
+            <p>Postavljanje MIDI kanala:</p>
+            <ul>
+                <li>Odaberite kanal (1-16) za svaki glas</li>
+                <li>Različiti glasovi mogu koristiti različite kanale</li>
+                <li>Omni mod omogućava slušanje svih kanala</li>
+                <li>Multi mod omogućava slušanje specifičnih kanala</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>2. MIDI konektori</h3>
+            <p>Povezivanje uređaja:</p>
+            <ul>
+                <li><strong>MIDI In:</strong> Prima MIDI podatke</li>
+                <li><strong>MIDI Out:</strong> Šalje MIDI podatke</li>
+                <li><strong>MIDI Thru:</strong> Prosljeđuje MIDI podatke</li>
+                <li>Koristite kvalitetne MIDI kabele</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>3. MIDI clock</h3>
+            <p>Sinkronizacija tempa:</p>
+            <ul>
+                <li>Master uređaj šalje MIDI clock</li>
+                <li>Slave uređaji prate tempo</li>
+                <li>Može se koristiti za sinkronizaciju arpeggiatora</li>
+                <li>Omogućava sinkronizaciju s DAW-om</li>
+            </ul>
+        </div>
+        
+        <h2>Napredne MIDI postavke</h2>
+        
+        <div class="step">
+            <h3>MIDI kontroleri</h3>
+            <p>Kontrola parametara putem MIDI-a:</p>
+            <ul>
+                <li><strong>CC (Control Change):</strong> Kontrola filtera, glasnoće, efekata</li>
+                <li><strong>Pitch Bend:</strong> Kontrola visine tona</li>
+                <li><strong>Modulation:</strong> Kontrola vibrata ili drugih efekata</li>
+                <li><strong>Aftertouch:</strong> Kontrola nakon pritiska tipke</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>MIDI mapping</h3>
+            <p>Prilagodba MIDI kontrole:</p>
+            <ul>
+                <li>Dodijelite CC brojeve parametrima</li>
+                <li>Prilagodite MIDI raspon</li>
+                <li>Invertirajte MIDI vrijednosti ako je potrebno</li>
+                <li>Kreirajte MIDI learn funkcije</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>MIDI filtri</h3>
+            <p>Filtriranje MIDI poruka:</p>
+            <ul>
+                <li>Filtrirajte određene MIDI poruke</li>
+                <li>Blokirajte neželjene kontrole</li>
+                <li>Prilagodite MIDI senzitivnost</li>
+                <li>Kreirajte MIDI transformacije</li>
+            </ul>
+        </div>
+        
+        <h2>MIDI s DAW-om</h2>
+        
+        <div class="step">
+            <h3>Povezivanje s računalom</h3>
+            <p>Koraci za povezivanje:</p>
+            <ul>
+                <li>Koristite USB kabel ili MIDI interface</li>
+                <li>Instalirajte potrebne drajvere</li>
+                <li>Postavite MIDI kanale u DAW-u</li>
+                <li>Testirajte komunikaciju</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>MIDI recording</h3>
+            <p>Snimanje MIDI podataka:</p>
+            <ul>
+                <li>Snimite MIDI podatke u DAW-u</li>
+                <li>Uredite MIDI podatke nakon snimanja</li>
+                <li>Koristite MIDI quantization</li>
+                <li>Dodajte MIDI efekte</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <h3>Koristan savjet</h3>
+            <p>Uvijek testirajte MIDI komunikaciju prije početka rada. Provjerite da svi uređaji komuniciraju ispravno.</p>
+        </div>
+        
+        <h2>MIDI programiranje</h2>
+        
+        <div class="step">
+            <h3>Program Change</h3>
+            <p>Promjena zvukova putem MIDI-a:</p>
+            <ul>
+                <li>Dodijelite brojeve zvukovima</li>
+                <li>Koristite Program Change poruke</li>
+                <li>Kreirajte banke zvukova</li>
+                <li>Organizirajte zvukove logički</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>MIDI sysex</h3>
+            <p>Napredne MIDI mogućnosti:</p>
+            <ul>
+                <li>Slanje kompleksnih podataka</li>
+                <li>Backup i restore postavki</li>
+                <li>Kontrola naprednih parametara</li>
+                <li>Firmware ažuriranja</li>
+            </ul>
+        </div>
+        
+        <h2>Praktični primjeri</h2>
+        
+        <div class="step">
+            <h3>MIDI kontroler setup</h3>
+            <p>Postavljanje MIDI kontrolera:</p>
+            <ul>
+                <li>Povežite MIDI kontroler s sintisajzerom</li>
+                <li>Dodijelite kontrole parametrima</li>
+                <li>Testirajte sve kontrole</li>
+                <li>Spremite setup</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Multi-timbre setup</h3>
+            <p>Korištenje više glasova:</p>
+            <ul>
+                <li>Dodijelite različite kanale glasovima</li>
+                <li>Kontrolirajte svaki glas zasebno</li>
+                <li>Kreirajte složene aranžmane</li>
+                <li>Koristite različite zvukove</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>MIDI arpeggiator</h3>
+            <p>Korištenje arpeggiatora:</p>
+            <ul>
+                <li>Sinkronizirajte s MIDI clockom</li>
+                <li>Kontrolirajte pattern putem MIDI-a</li>
+                <li>Dodajte MIDI modulaciju</li>
+                <li>Kreirajte složene arpeggio patternove</li>
+            </ul>
+        </div>
+        
+        <h2>Rješavanje problema</h2>
+        
+        <div class="warning">
+            <h3>Česti MIDI problemi</h3>
+            <p><strong>MIDI feedback:</strong> Izbjegavajte MIDI loopove.</p>
+            <p><strong>Latency:</strong> Provjerite MIDI buffer postavke.</p>
+            <p><strong>Nesinkronizacija:</strong> Provjerite MIDI clock postavke.</p>
+            <p><strong>Nedostajuće poruke:</strong> Provjerite MIDI filtre.</p>
+        </div>
+        
+        <div class="tip">
+            <h3>Rješenja</h3>
+            <ul>
+                <li>Koristite MIDI monitor za debugiranje</li>
+                <li>Provjerite MIDI kanale</li>
+                <li>Testirajte s jednostavnim setupom</li>
+                <li>Provjerite MIDI kabele</li>
+            </ul>
+        </div>
+        
+        <h2>MIDI best practices</h2>
+        
+        <div class="step">
+            <h3>Organizacija</h3>
+            <p>Za efikasno korištenje MIDI-a:</p>
+            <ul>
+                <li>Dokumentirajte MIDI setup</li>
+                <li>Koristite konzistentne MIDI kanale</li>
+                <li>Organizirajte MIDI kontrolere</li>
+                <li>Napravite backup MIDI postavki</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Optimizacija</h3>
+            <p>Za najbolje performanse:</p>
+            <ul>
+                <li>Minimizirajte MIDI latency</li>
+                <li>Koristite MIDI filtre kad je potrebno</li>
+                <li>Optimizirajte MIDI buffer veličinu</li>
+                <li>Redovito testirajte MIDI komunikaciju</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <h3>Preporučena praksa</h3>
+            <p>Uvijek imajte plan B za MIDI setup. Ako MIDI ne radi, trebali biste moći nastaviti s radom bez njega.</p>
+        </div>
+        
+        <h2>MIDI resursi</h2>
+        <p>Koristan materijal za učenje:</p>
+        <ul>
+            <li>MIDI specifikacija</li>
+            <li>Korg MIDI dokumentacija</li>
+            <li>MIDI tutorial videa</li>
+            <li>MIDI forum zajednice</li>
+            <li>MIDI test aplikacije</li>
+        </ul>
+    </div>
+</body>
+</html> 

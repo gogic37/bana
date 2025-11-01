@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roland - MIDI postavke</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #f58d1f;
+            border-bottom: 3px solid #f58d1f;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #f58d1f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #f58d1f;
+            border-radius: 5px;
+        }
+        .tip {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+        }
+        .info {
+            background: #d1ecf1;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #17a2b8;
+            border-radius: 5px;
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="roland.html" class="back-link">← Povratak na Roland kategorije</a>
+        
+        <h1>MIDI postavke na Roland klavijaturama</h1>
+        
+        <p>MIDI omogućava vam povezivanje i komunikaciju između različitih muzičkih uređaja. Roland klavijature imaju specifične MIDI postavke i mapiranje kanala.</p>
+        
+        <h2>MIDI konektori</h2>
+        
+        <div class="step">
+            <h3>Fizički konektori</h3>
+            <p>Roland klavijature obično imaju:</p>
+            <ul>
+                <li><strong>MIDI IN</strong> - prima MIDI signale</li>
+                <li><strong>MIDI OUT</strong> - šalje MIDI signale</li>
+                <li><strong>USB TO HOST</strong> - USB konektor za MIDI preko USB-a</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>USB MIDI</h3>
+            <p>Roland klavijature koriste USB za MIDI:</p>
+            <ul>
+                <li>Lakše povezivanje s računalima</li>
+                <li>Nije potrebno posebno MIDI sučelje</li>
+                <li>Veća brzina prijenosa</li>
+            </ul>
+        </div>
+        
+        <h2>MIDI kanali</h2>
+        
+        <div class="step">
+            <h3>Roland MIDI kanali</h3>
+            <p>Roland koristi specifično mapiranje kanala:</p>
+            <ul>
+                <li><strong>Upper</strong> - obično kanal 1</li>
+                <li><strong>Lower</strong> - obično kanal 2</li>
+                <li><strong>Rhythm Parts</strong> - kanali 10-16 (kanal 10 je Drum - GM standard)</li>
+            </ul>
+        </div>
+        
+        <div class="info">
+            <h3>GM Standard</h3>
+            <p>Roland klavijature prate GM (General MIDI) standard za Rhythm Parts, gdje kanal 10 je rezerviran za bubnjeve.</p>
+        </div>
+        
+        <h2>MIDI postavke</h2>
+        
+        <div class="step">
+            <h3>Pristup MIDI postavkama</h3>
+            <ol>
+                <li>Pritisnite "MENU"</li>
+                <li>Odaberite "MIDI" ili "MIDI Settings"</li>
+                <li>Ili "SYSTEM" → "MIDI"</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Transmit Channel (Slanje)</h3>
+            <p>Postavka koja kontrolira na koji kanal se šalju MIDI poruke:</p>
+            <ul>
+                <li><strong>Upper Channel</strong> - kanal za Upper tone</li>
+                <li><strong>Lower Channel</strong> - kanal za Lower tone</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Receive Channel (Primanje)</h3>
+            <p>Postavka koja kontrolira s kojih kanala klavijatura prima MIDI:</p>
+            <ul>
+                <li><strong>Upper Receive</strong> - kanal na kojem prima note</li>
+                <li><strong>Lower Receive</strong> - kanal na kojem prima note</li>
+                <li><strong>Rhythm Receive</strong> - kanali za Rhythm kontrolu</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Local Control</h3>
+            <p>Kontrolira da li klavijatura direktno kontrolira svoje interne Tone-ove:</p>
+            <ul>
+                <li><strong>ON</strong> - tipkovnica direktno kontrolira Tone-ove (normalno)</li>
+                <li><strong>OFF</strong> - tipkovnica ne kontrolira direktno (korisno za DAW kontrolu)</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>MIDI Clock</h3>
+            <p>Kontrolira sinkronizaciju tempa:</p>
+            <ul>
+                <li><strong>Internal</strong> - klavijatura kontrolira tempo</li>
+                <li><strong>External</strong> - klavijatura prima tempo iz vanjskog uređaja</li>
+                <li><strong>Auto</strong> - automatski detektira</li>
+            </ul>
+        </div>
+        
+        <h2>Povezivanje s računalom</h2>
+        
+        <div class="step">
+            <h3>USB konekcija</h3>
+            <ol>
+                <li>Povežite Roland klavijaturu s računalom preko USB kabela</li>
+                <li>Instalirajte potrebne drajvere (ako je potrebno)</li>
+                <li>Na računalu, otvorite DAW ili MIDI software</li>
+                <li>Odaberite Roland klavijaturu kao MIDI ulaz/izlaz</li>
+            </ol>
+        </div>
+        
+        <div class="info">
+            <h3>Drajveri</h3>
+            <p>Većina modernih Roland klavijatura koristi generički USB MIDI driver. Za neke modele možda ćete trebati posebne drajvere s Roland web stranice.</p>
+        </div>
+        
+        <h2>Rešavanje problema</h2>
+        
+        <div class="step">
+            <h3>Klavijatura ne šalje MIDI</h3>
+            <ul>
+                <li>Provjerite MIDI konektor</li>
+                <li>Provjerite MIDI postavke (Transmit Channel)</li>
+                <li>Provjerite da je Local Control ON (ako želite interno sviranje)</li>
+                <li>Provjerite USB konekciju</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Klavijatura ne prima MIDI</h3>
+            <ul>
+                <li>Provjerite MIDI IN konektor</li>
+                <li>Provjerite Receive Channel postavke</li>
+                <li>Provjerite da vanjski uređaj šalje na ispravan kanal</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

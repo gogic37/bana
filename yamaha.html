@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yamaha - Vodič za klavijature</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .nav-title {
+            display: inline-block;
+            padding: 8px 16px;
+            font-weight: 600;
+            color: #000 !important;
+            background: none;
+            cursor: default;
+            text-decoration: none;
+            line-height: 1;
+            white-space: nowrap;
+        }
+        .nav-title:hover {
+            color: #000 !important;
+            background: none;
+        }
+        body {
+            background: url('images/druga.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem 2rem;
+        }
+        .yamaha-layout {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-top: 32px;
+        }
+        .yamaha-categories {
+            min-width: 220px;
+            background: #f7f7fa;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            padding: 24px 18px 18px 18px;
+        }
+        .yamaha-categories h3 {
+            margin-top: 0;
+            font-size: 1.15em;
+            font-weight: 700;
+            color: #2a2a2a;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+        }
+        .yamaha-categories ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .yamaha-categories li {
+            font-size: 1.08em;
+            color: #333;
+            padding: 10px 0 10px 8px;
+            border-left: 3px solid #e63946;
+            margin-bottom: 6px;
+            border-radius: 3px;
+            transition: background 0.2s;
+        }
+        .yamaha-categories li:hover {
+            background: rgba(230, 57, 70, 0.1);
+        }
+        .yamaha-categories a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .yamaha-content {
+            flex: 1;
+            padding: 24px;
+            background: #f7f7fa;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        }
+        .yamaha-content h2 {
+            margin-top: 0;
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #2a2a2a;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .yamaha-content p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+        .yamaha-intro {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .yamaha-intro img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">Midi Connect Portal</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="o-meni.html">O meni</a></li>
+                <li class="dropdown">
+                    <span class="nav-title">Aranžeri</span>
+                    <ul class="dropdown-content">
+                        <li><a href="korg.html">Korg</a></li>
+                        <li><a href="yamaha.html">Yamaha</a></li>
+                        <li><a href="roland.html">Roland</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Stilovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="pop.html">Rumba</a></li>
+                        <li><a href="rock.html">Dvojke</a></li>
+                        <li><a href="jazz.html">Beguine</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Zvukovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="piano.html">Piano</a></li>
+                        <li><a href="orgulje.html">Orgulje</a></li>
+                        <li><a href="sintisajzer.html">Strings</a></li>
+                    </ul>
+                </li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="yamaha-layout">
+            <aside class="yamaha-categories">
+                <h3>Kategorije</h3>
+                <ul>
+                    <li><a href="yamaha-osnove.html">Osnove rada</a></li>
+                    <li><a href="yamaha-izrada-stilova.html">Izrada stilova</a></li>
+                    <li><a href="yamaha-izrada-zvukova.html">Izrada zvukova</a></li>
+                    <li><a href="yamaha-voice-editor.html">Voice Editor</a></li>
+                    <li><a href="yamaha-registration.html">Registration Memory</a></li>
+                    <li><a href="yamaha-sempliranje.html">Sempliranje</a></li>
+                    <li><a href="yamaha-midi-postavke.html">MIDI postavke</a></li>
+                    <li><a href="yamaha-napredne-funkcije.html">Napredne funkcije</a></li>
+                </ul>
+            </aside>
+            <div class="yamaha-content">
+                <div class="yamaha-intro">
+                    <img src="images/yamaha-genos2.jpg" alt="Yamaha Genos2">
+                    <h2>Dobrodošli u Yamaha sekciju</h2>
+                    <p>Ovaj vodič će vas provesti kroz sve aspekte rada s Yamaha aranžerskim klavijaturama. Naučite kako funkcioniraju zvukovi, stilovi i kako kreirati vlastite aranžmane.</p>
+                    <p><strong>Odaberite kategoriju sa lijeve strane</strong> da saznate više o određenoj temi vezanoj za Yamaha klavijature.</p>
+                </div>
+                <div class="yamaha-intro">
+                    <h3>Što ćete naučiti:</h3>
+                    <ul>
+                        <li><strong>Osnove rada</strong> - osnovne funkcije i navigacija</li>
+                        <li><strong>Izrada stilova</strong> - kako kreirati i uređivati stilove</li>
+                        <li><strong>Izrada zvukova</strong> - kako funkcioniraju i kako se kreiraju zvukovi</li>
+                        <li><strong>Voice Editor</strong> - napredno uređivanje zvukova</li>
+                        <li><strong>Registration Memory</strong> - spremanje i organizacija postavki</li>
+                        <li><strong>Sempliranje</strong> - rad s audio uzorcima</li>
+                        <li><strong>MIDI postavke</strong> - povezivanje i kontroliranje</li>
+                        <li><strong>Napredne funkcije</strong> - dodatne mogućnosti</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kontakt</h3>
+                <p><i class="fas fa-envelope"></i> gogic37@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Pratite nas</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/groups/330748004039789" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@gogic37/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Midi Connect Portal. Sva prava pridržana.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

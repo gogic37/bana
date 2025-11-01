@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roland - Izrada Tone-ova</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #f58d1f;
+            border-bottom: 3px solid #f58d1f;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #f58d1f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #f58d1f;
+            border-radius: 5px;
+        }
+        .tip {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+        }
+        .info {
+            background: #d1ecf1;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #17a2b8;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f58d1f;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="roland.html" class="back-link">← Povratak na Roland kategorije</a>
+        
+        <h1>Izrada Tone-ova na Roland klavijaturama</h1>
+        
+        <p>Roland koristi <strong>Tone</strong> umjesto "Voice" za zvukove. Tone-ovi na Roland klavijaturama koriste različite sintesne tehnologije (SuperNATURAL ili ZEN-Core) i imaju specifičan način kreiranja koji se razlikuje od Yamaha pristupa.</p>
+        
+        <h2>Što je Tone?</h2>
+        
+        <div class="info">
+            <h3>Definicija</h3>
+            <p><strong>Tone</strong> je pojedinačni zvuk instrumenta koji možete svirati. Svaki Tone može biti:</p>
+            <ul>
+                <li><strong>Elementarni</strong> - jednostavni zvuk jedne vrste instrumenta</li>
+                <li><strong>Layer</strong> - kombinacija više Tone-ova koji se sviraju istovremeno</li>
+                <li><strong>Split</strong> - različiti Tone-ovi za različite dijelove tipkovnice</li>
+                <li><strong>Multi-sampled</strong> - koristi više audio uzoraka za različite note</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Roland sintesne tehnologije</h3>
+            <p><strong>SuperNATURAL</strong> (BK-3, BK-5):</p>
+            <ul>
+                <li>Koristi .SVN format</li>
+                <li>Realistični zvukovi instrumenata</li>
+                <li>Visoka kvaliteta zvuka</li>
+            </ul>
+            <p><strong>ZEN-Core</strong> (BK-7m, EA-7, noviji modeli):</p>
+            <ul>
+                <li>Koristi .SVZ format</li>
+                <li>Više fleksibilnosti u kreiranju</li>
+                <li>Kompatibilnost s različitim Roland produktima</li>
+                <li>Napredne mogućnosti editiranja</li>
+            </ul>
+        </div>
+        
+        <h2>Kako funkcionira Tone?</h2>
+        
+        <div class="step">
+            <h3>Osnovni principi</h3>
+            <p>Roland Tone-ovi rade na principu:</p>
+            <ol>
+                <li><strong>Oscillator (Osc)</strong> - generira osnovni zvuk (waveform ili sample)</li>
+                <li><strong>Filter</strong> - oblikuje karakter zvuka</li>
+                <li><strong>Amp Envelope</strong> - kontrolira glasnoću kroz vrijeme</li>
+                <li><strong>LFO</strong> - dodaje modulacije i pokretanje</li>
+                <li><strong>Efekti</strong> - reverb, chorus, delay, itd.</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Struktura Tone-a</h3>
+            <p>Tone može sastojati od:</p>
+            <ul>
+                <li><strong>Single Tone</strong> - jedan osnovni zvuk</li>
+                <li><strong>Layer Tone</strong> - dva ili više Tone-ova istovremeno</li>
+                <li><strong>Split Tone</strong> - različiti Tone-ovi za različite zone tipkovnice</li>
+                <li><strong>Parts</strong> - Tone može imati više Parts (ZEN-Core)</li>
+            </ul>
+        </div>
+        
+        <h2>Tipovi Tone-ova</h2>
+        
+        <div class="step">
+            <h3>1. Single Tone (Pojedinačni Tone)</h3>
+            <p>Osnovni tip Tone-a - jedan instrument u cijelom rasponu tipkovnice.</p>
+            <p><strong>Primjer:</strong> Grand Piano, Strings, Trumpet</p>
+        </div>
+        
+        <div class="step">
+            <h3>2. Layer Tone (Slojevi)</h3>
+            <p>Dva ili više Tone-ova sviraju istovremeno:</p>
+            <ul>
+                <li><strong>Dual Layer</strong> - dva Tone-a zajedno (npr. Piano + Strings)</li>
+                <li><strong>Triple Layer</strong> - tri Tone-a</li>
+                <li><strong>Quad Layer</strong> - četiri Tone-a (na modelima koji podržavaju)</li>
+            </ul>
+            <p><strong>Kako kreirati:</strong> Tone Edit → Layer → odaberite Tone-ove i podešavanja</p>
+        </div>
+        
+        <div class="step">
+            <h3>3. Split Tone (Podijeljeni Tone)</h3>
+            <p>Različiti Tone-ovi za različite dijelove tipkovnice:</p>
+            <ul>
+                <li><strong>Split Point</strong> - točka gdje se Tone mijenja</li>
+                <li><strong>Lower</strong> - lijevi dio (obično bas)</li>
+                <li><strong>Upper</strong> - desni dio (obično melodija)</li>
+            </ul>
+            <p><strong>Primjer:</strong> Bas lijevo, Piano desno</p>
+        </div>
+        
+        <div class="step">
+            <h3>4. Multi-sampled Tone</h3>
+            <p>Koristi više audio uzoraka za različite note:</p>
+            <ul>
+                <li>Različiti sample-i za različite oktave</li>
+                <li>Prirodniji zvuk kroz cijeli raspon</li>
+                <li>Više memorije, ali bolja kvaliteta</li>
+            </ul>
+        </div>
+        
+        <h2>Kreiranje vlastitog Tone-a</h2>
+        
+        <div class="step">
+            <h3>Metoda 1: Modifikacija postojećeg Tone-a</h3>
+            <p><strong>Najlakši način za početak:</strong></p>
+            <ol>
+                <li>Odaberite Tone koji vam je najbliži željenom</li>
+                <li>Pritisnite "MENU" → "Tone Edit" ili "TONE EDIT"</li>
+                <li>Izmijenite parametre:</li>
+                <ul>
+                    <li>Filter (cutoff, resonance)</li>
+                    <li>Envelope (attack, decay, sustain, release)</li>
+                    <li>LFO (brzina, dubina, waveform)</li>
+                    <li>Efekte (reverb, chorus, delay)</li>
+                    <li>Glasnoću i pan</li>
+                </ul>
+                <li>Spremite kao novi User Tone</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Metoda 2: Kreiranje Layer Tone-a</h3>
+            <p><strong>Kombinacija više Tone-ova:</strong></p>
+            <ol>
+                <li>Tone Edit → Layer</li>
+                <li>Odaberite prvi Tone</li>
+                <li>Odaberite drugi Tone</li>
+                <li>Podesite glasnoću svakog Tone-a</li>
+                <li>Podesite panoramu (pan) za stereo efekt</li>
+                <li>Podesite oktaver ako je potrebno</li>
+                <li>Dodajte efekte</li>
+                <li>Spremite</li>
+            </ol>
+            <div class="tip">
+                <p><strong>Savjet:</strong> Kombinirajte komplementarne Tone-ove. Na primjer, Piano (bogati u srednjim frekvencijama) + Strings (bogati u visokim) = puni, ljepši zvuk.</p>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h3>Metoda 3: Split Tone kreiranje</h3>
+            <p><strong>Različiti Tone-ovi za različite zone:</strong></p>
+            <ol>
+                <li>Tone Edit → Split</li>
+                <li>Postavite Split Point (točka podjele)</li>
+                <li>Odaberite Lower Tone (lijevo)</li>
+                <li>Odaberite Upper Tone (desno)</li>
+                <li>Podesite glasnoću za svaki dio</li>
+                <li>Podesite oktaver ako je potrebno</li>
+                <li>Dodajte efekte</li>
+                <li>Spremite</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Metoda 4: Kreiranje iz sample-a</h3>
+            <p>Roland klavijature omogućavaju kreiranje Tone-ova iz WAV sample-a:</p>
+            <ol>
+                <li>Pripremite WAV sample-e</li>
+                <li>Učitajte ih u klavijaturu</li>
+                <li>Tone Edit → Sample</li>
+                <li>Dodijelite sample-e različitim notama</li>
+                <li>Podesite parametre (Filter, EG, itd.)</li>
+                <li>Za loop sample-e, uključite Loop</li>
+                <li>Spremite kao novi Tone</li>
+            </ol>
+        </div>
+        
+        <h2>ZEN-Core specifičnosti</h2>
+        
+        <div class="info">
+            <h3>ZEN-Core Parts</h3>
+            <p>ZEN-Core Tone-ovi (noviji modeli) mogu imati više Parts:</p>
+            <ul>
+                <li><strong>Part</strong> - pojedinačni zvuk u Tone-u</li>
+                <li><strong>Tone može imati više Parts</strong> - što više Parts, kompleksniji Tone</li>
+                <li><strong>Svaki Part</strong> ima vlastiti Oscillator, Filter, EG, LFO</li>
+                <li><strong>Part Mix</strong> - kontrola kako se Parts miješaju</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>ZEN-Core oscilatori</h3>
+            <p>ZEN-Core Tone-ovi mogu koristiti:</p>
+            <ul>
+                <li><strong>PCM Wave</strong> - uzorkovani zvukovi</li>
+                <li><strong>Virtual Analog</strong> - sintetizirani zvukovi</li>
+                <li><strong>Wavetable</strong> - wavetable sintesu (neki modeli)</li>
+            </ul>
+        </div>
+        
+        <h2>Praktični primjeri</h2>
+        
+        <div class="step">
+            <h3>Primjer 1: "Warm Piano"</h3>
+            <p>Kreiranje toplijeg, mekšeg piano zvuka:</p>
+            <ol>
+                <li>Odaberite "Grand Piano" Tone</li>
+                <li>Tone Edit → Common ili Filter</li>
+                <li>Smanjite Filter Cutoff (tamniji zvuk)</li>
+                <li>Povećajte Attack malo (meksi početak)</li>
+                <li>Povećajte Release za duži tail</li>
+                <li>Dodajte malo Reverb</li>
+                <li>Spremite kao "Warm Piano"</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Primjer 2: "Pad + Lead" Layer</h3>
+            <p>Kombinacija pozadinskog i vodećeg zvuka:</p>
+            <ol>
+                <li>Tone Edit → Layer</li>
+                <li>Odaberite "Strings" kao prvi Tone (glasnoća 70%)</li>
+                <li>Odaberite "Lead Synth" kao drugi Tone (glasnoća 100%)</li>
+                <li>Podesite pan: Strings lijevo (-30), Lead centar</li>
+                <li>Strings: dodajte Chorus</li>
+                <li>Lead: dodajte malo Delay</li>
+                <li>Spremite</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Primjer 3: "Bass + Piano" Split</h3>
+            <p>Bas lijevo, Piano desno:</p>
+            <ol>
+                <li>Tone Edit → Split</li>
+                <li>Postavite Split Point na C4 (sredina)</li>
+                <li>Lower Tone: "Electric Bass"</li>
+                <li>Upper Tone: "Grand Piano"</li>
+                <li>Podesite glasnoće (Bas možda malo jači)</li>
+                <li>Spremite</li>
+            </ol>
+        </div>
+        
+        <h2>Spremanje i organizacija</h2>
+        
+        <div class="step">
+            <h3>User Tone memorija</h3>
+            <p>Vaši prilagođeni Tone-ovi spremaju se u:</p>
+            <ul>
+                <li><strong>User Tone Bank</strong> - interno spremište klavijature</li>
+                <li><strong>USB</strong> - za backup i prijenos</li>
+            </ul>
+            <p><strong>Format:</strong> .SVZ (ZEN-Core) ili .SVN (SuperNATURAL) datoteke</p>
+        </div>
+        
+        <div class="info">
+            <h3>Organizacija</h3>
+            <p>Organizirajte svoje Tone-ove po kategorijama i dodajte opisna imena. Na primjer:</p>
+            <ul>
+                <li>"Piano_Warm_Custom"</li>
+                <li>"Layer_Strings_Pad"</li>
+                <li>"Split_Bass_Piano"</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <h3>Backup vaših Tone-ova</h3>
+            <p>Uvijek napravite backup vaših prilagođenih Tone-ova na USB memoriju. Ako se nešto dogodi s klavijaturom ili resetirate postavke, nećete izgubiti svoj rad.</p>
+        </div>
+        
+        <div class="tip">
+            <h3>Eksperimentiranje</h3>
+            <p>Ne bojte se eksperimentirati! Najbolji Tone-ovi često nastaju slučajno. Podesite parametre i slušajte što se događa.</p>
+        </div>
+    </div>
+</body>
+</html>
+

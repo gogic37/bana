@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korg - Izrada zvukova</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+        .tip {
+            background: #e8f5e8;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #27ae60;
+            border-radius: 5px;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="korg.html" class="back-link">← Povratak na Korg kategorije</a>
+        
+        <h1>Izrada zvukova na Korg sintisajzerima</h1>
+        
+        <p>Kreiranje vlastitih zvukova na Korg sintisajzerima je umjetnost koja kombinira tehničko znanje s kreativnošću. Evo sveobuhvatnog vodiča kroz proces.</p>
+        
+        <h2>Osnove sintisajzera</h2>
+        <p>Prije nego što počnete kreirati zvukove, važno je razumjeti osnovne komponente:</p>
+        
+        <div class="step">
+            <h3>Oscilatori</h3>
+            <p>Oscilatori su temelj svakog zvuka. Odaberite valni oblik koji će biti osnova vašeg zvuka:</p>
+            <ul>
+                <li><strong>Sine:</strong> Čisti, temeljni ton</li>
+                <li><strong>Square:</strong> Bogat u harmonikama</li>
+                <li><strong>Saw:</strong> Oštar, "rezan" zvuk</li>
+                <li><strong>Triangle:</strong> Topao, mekan zvuk</li>
+                <li><strong>Pulse:</strong> Varijacija square vala</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Filter</h3>
+            <p>Filter kontrolira koji dijelovi frekvencijskog spektra se čuju:</p>
+            <ul>
+                <li><strong>Cutoff:</strong> Određuje gdje filter počinje</li>
+                <li><strong>Resonance:</strong> Dodaje naglasak na cutoff frekvenciju</li>
+                <li><strong>Filter Type:</strong> Low-pass, High-pass, Band-pass</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Envelope Generator (ADSR)</h3>
+            <p>Kontrolira kako se zvuk mijenja tijekom vremena:</p>
+            <ul>
+                <li><strong>Attack:</strong> Koliko brzo zvuk dosegne punu glasnoću</li>
+                <li><strong>Decay:</strong> Koliko brzo se smanjuje nakon attacka</li>
+                <li><strong>Sustain:</strong> Razina glasnoće dok se drži tipka</li>
+                <li><strong>Release:</strong> Koliko brzo se zvuk gasi</li>
+            </ul>
+        </div>
+        
+        <h2>Proces kreiranja zvuka</h2>
+        
+        <div class="step">
+            <h3>1. Odaberite osnovni zvuk</h3>
+            <p>Započnite s postojećim zvukom koji je sličan onome što želite kreirati. Ovo će vam dati dobru osnovu.</p>
+        </div>
+        
+        <div class="step">
+            <h3>2. Prilagodite oscilatore</h3>
+            <p>Eksperimentirajte s različitim valnim oblicima i njihovim kombinacijama. Pokušajte:</p>
+            <ul>
+                <li>Miješanje različitih valnih oblika</li>
+                <li>Prilagodbu detune-a između oscilatora</li>
+                <li>Dodavanje modulacije</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>3. Uredite filter</h3>
+            <p>Filter je ključan za oblikovanje karaktera zvuka:</p>
+            <ul>
+                <li>Postavite cutoff frekvenciju</li>
+                <li>Dodajte resonance za "rezonantni" zvuk</li>
+                <li>Eksperimentirajte s filter modulacijom</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>4. Prilagodite envelope</h3>
+            <p>ADSR postavke određuju "osjećaj" zvuka:</p>
+            <ul>
+                <li>Brzi attack za perkusivne zvukove</li>
+                <li>Spori attack za padove</li>
+                <li>Dugi release za atmosferične zvukove</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <h3>Koristan savjet</h3>
+            <p>Uvijek počnite s jednostavnim postavkama i postupno dodajajte složenost. Često je jednostavniji zvuk efektniji.</p>
+        </div>
+        
+        <h2>Napredne tehnike</h2>
+        
+        <div class="step">
+            <h3>Modulacija</h3>
+            <p>Koristite LFO (Low Frequency Oscillator) za dodavanje pokreta:</p>
+            <ul>
+                <li>Filter modulacija za "wah-wah" efekt</li>
+                <li>Pitch modulacija za vibrato</li>
+                <li>Amplitude modulacija za tremolo</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h3>Efekti</h3>
+            <p>Dodajte efekte za obogaćivanje zvuka:</p>
+            <ul>
+                <li>Reverb za dubinu</li>
+                <li>Delay za prostor</li>
+                <li>Chorus za debljinu</li>
+                <li>Distortion za agresivnost</li>
+            </ul>
+        </div>
+        
+        <div class="warning">
+            <h3>Važno</h3>
+            <p>Nemojte pretjerivati s efektima. Često je bolje imati čist, dobro oblikovan zvuk nego zvuk pretrpan efektima.</p>
+        </div>
+        
+        <h2>Kategorije zvukova</h2>
+        
+        <div class="step">
+            <h3>Lead zvukovi</h3>
+            <p>Za solo melodije - obično bogati u harmonikama s brzim attackom.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Pad zvukovi</h3>
+            <p>Za atmosferu - spor attack, dug release, često s filter modulacijom.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Bass zvukovi</h3>
+            <p>Za ritmičku osnovu - fokusirani na niske frekvencije.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Pluck zvukovi</h3>
+            <p>Perkusivni zvukovi - brzi attack i decay.</p>
+        </div>
+        
+        <h2>Spremanje i organizacija</h2>
+        <p>Nakon što ste zadovoljni svojim zvukom:</p>
+        <ul>
+            <li>Dajte mu opisno ime</li>
+            <li>Organizirajte u odgovarajuće kategorije</li>
+            <li>Napravite backup kopiju</li>
+            <li>Testirajte u različitim kontekstima</li>
+        </ul>
+        
+        <div class="tip">
+            <h3>Preporučena praksa</h3>
+            <p>Vodite dnevnik svojih eksperimenata. Zabilježite što vam se svidjelo i što ne, pa ćete lakše kreirati zvukove u budućnosti.</p>
+        </div>
+    </div>
+</body>
+</html> 

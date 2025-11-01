@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korg - Vodič za klavijature</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .nav-title {
+            display: inline-block;
+            padding: 8px 16px;
+            font-weight: 600;
+            color: #000 !important;
+            background: none;
+            cursor: default;
+            text-decoration: none;
+            line-height: 1;
+            white-space: nowrap;
+        }
+        .nav-title:hover {
+            color: #000 !important;
+            background: none;
+        }
+        body {
+            background: url('images/druga.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 2rem 2rem;
+        }
+        .korg-layout {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-top: 32px;
+        }
+        .korg-categories {
+            min-width: 220px;
+            background: #f7f7fa;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            padding: 24px 18px 18px 18px;
+        }
+        .korg-categories h3 {
+            margin-top: 0;
+            font-size: 1.15em;
+            font-weight: 700;
+            color: #2a2a2a;
+            letter-spacing: 0.5px;
+            margin-bottom: 18px;
+        }
+        .korg-categories ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .korg-categories li {
+            font-size: 1.08em;
+            color: #333;
+            padding: 10px 0 10px 8px;
+            border-left: 3px solid #0066cc;
+            margin-bottom: 6px;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+        }
+        .korg-categories li:hover {
+            background: rgba(0, 102, 204, 0.1);
+            transform: translateX(3px);
+        }
+        .korg-categories a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .korg-content {
+            flex: 1;
+            padding: 24px;
+            background: #f7f7fa;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+        }
+        .korg-content h2 {
+            margin-top: 0;
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #2a2a2a;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .korg-content p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
+        .korg-intro {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 4px solid #0066cc;
+        }
+        .korg-intro img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .korg-intro h2 {
+            color: #0066cc;
+            margin-bottom: 12px;
+        }
+        .korg-intro h3 {
+            color: #2a2a2a;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            font-size: 1.3em;
+        }
+        .korg-intro ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .korg-intro ul li {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        .korg-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 24px;
+        }
+        .korg-feature-card {
+            background: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .korg-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.3);
+        }
+        .korg-feature-card h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .korg-feature-card p {
+            margin: 0;
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">Midi Connect Portal</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="o-meni.html">O meni</a></li>
+                <li class="dropdown">
+                    <span class="nav-title">Aranžeri</span>
+                    <ul class="dropdown-content">
+                        <li><a href="korg.html">Korg</a></li>
+                        <li><a href="yamaha.html">Yamaha</a></li>
+                        <li><a href="roland.html">Roland</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Stilovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="pop.html">Rumba</a></li>
+                        <li><a href="rock.html">Dvojke</a></li>
+                        <li><a href="jazz.html">Beguine</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Zvukovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="piano.html">Piano</a></li>
+                        <li><a href="orgulje.html">Orgulje</a></li>
+                        <li><a href="sintisajzer.html">Strings</a></li>
+                    </ul>
+                </li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="korg-layout">
+            <aside class="korg-categories">
+                <h3>Kategorije</h3>
+                <ul>
+                    <li><a href="korg-izrada-stylova.html">Izrada stylova</a></li>
+                    <li><a href="korg-izrada-zvukova.html">Izrada zvukova</a></li>
+                    <li><a href="korg-sempliranje.html">Sempliranje</a></li>
+                    <li><a href="korg-loopovanje.html">Loopovanje</a></li>
+                    <li><a href="korg-midi-postavke.html">MIDI postavke</a></li>
+                    <li><a href="korg-razlicito.html">Različito</a></li>
+                </ul>
+            </aside>
+            <div class="korg-content">
+                <div class="korg-intro">
+                    <img src="images/korg-pa5x.jpeg" alt="Korg PA5X">
+                    <h2>Dobrodošli u Korg sekciju</h2>
+                    <p>Ovaj vodič će vas provesti kroz sve aspekte rada s Korg aranžerskim klavijaturama. Korg sintisajzeri poznati su po svojoj moćnoj sintesnoj tehnologiji, naprednim mogućnostima kreiranja zvukova i stilova, te intuitivnom korisničkom sučelju.</p>
+                    <p><strong>Odaberite kategoriju sa lijeve strane</strong> da saznate više o određenoj temi vezanoj za Korg sintisajzere.</p>
+                </div>
+                <div class="korg-intro">
+                    <h3>Korg specifičnosti:</h3>
+                    <ul>
+                        <li><strong>Style</strong> - Korg koristi "Style" za automatske aranžmane</li>
+                        <li><strong>Sound</strong> - Korg koristi "Sound" za zvukove</li>
+                        <li><strong>EDS-XP Engine</strong> - napredna sintesna tehnologija</li>
+                        <li><strong>TouchView</strong> - touchscreen sučelje</li>
+                        <li><strong>Real-time kontrol</strong> - napredne mogućnosti kontrole u realnom vremenu</li>
+                    </ul>
+                </div>
+                <div class="korg-intro">
+                    <h3>Što ćete naučiti:</h3>
+                    <ul>
+                        <li><strong>Izrada stylova</strong> - kako kreirati i uređivati Style-ove</li>
+                        <li><strong>Izrada zvukova</strong> - kako funkcioniraju i kako se kreiraju Sound-ovi</li>
+                        <li><strong>Sempliranje</strong> - rad s audio uzorcima</li>
+                        <li><strong>Loopovanje</strong> - kreiranje loop uzoraka</li>
+                        <li><strong>MIDI postavke</strong> - povezivanje i kontroliranje</li>
+                        <li><strong>Različito</strong> - dodatne funkcije i napredne tehnike</li>
+                    </ul>
+                </div>
+                <div class="korg-features">
+                    <div class="korg-feature-card">
+                        <h4><i class="fas fa-sliders-h"></i> Napredno uređivanje</h4>
+                        <p>Moćan editor za kreiranje vlastitih zvukova i stilova s preciznom kontrolom svakog parametra</p>
+                    </div>
+                    <div class="korg-feature-card">
+                        <h4><i class="fas fa-music"></i> Real-time kontrol</h4>
+                        <p>Kontrole u realnom vremenu omogućavaju vam da mijenjate parametre tijekom sviranja</p>
+                    </div>
+                    <div class="korg-feature-card">
+                        <h4><i class="fas fa-layer-group"></i> Layering</h4>
+                        <p>Kombinujte više zvukova i stilova za kompleksne, bogate kreacije</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kontakt</h3>
+                <p><i class="fas fa-envelope"></i> gogic37@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Pratite nas</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/groups/330748004039789" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@gogic37/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Midi Connect Portal. Sva prava pridržana.</p>
+        </div>
+    </footer>
+</body>
+</html>
