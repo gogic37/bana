@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Midi Connect Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="register-page">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">Midi Connect Portal</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="o-meni.html">O meni</a></li>
+                <li class="dropdown">
+                    <span class="nav-title">Klavijature</span>
+                    <ul class="dropdown-content">
+                        <li><a href="korg.html">Korg</a></li>
+                        <li><a href="yamaha.html">Yamaha</a></li>
+                        <li><a href="roland.html">Roland</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Stilovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="pop.html">Rumba</a></li>
+                        <li><a href="rock.html">Dvojke</a></li>
+                        <li><a href="jazz.html">Beguine</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Zvukovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="piano.html">Piano</a></li>
+                        <li><a href="orgulje.html">Orgulje</a></li>
+                        <li><a href="sintisajzer.html">Strings</a></li>
+                    </ul>
+                </li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="register.html" aria-current="page">Register</a></li>
+                <li><a href="login.html">Log in</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-section register-section">
+        <div class="container">
+            <div class="register-container">
+                <div class="register-card">
+                    <h1>Registracija</h1>
+                    <p>Unesite svoje podatke za kreiranje korisničkog računa. Za stvarnu pohranu i zaštitu podataka potrebno je povezivanje s backend serverom.</p>
+                    <form class="register-form">
+                        <div class="form-group">
+                            <label for="reg-name">Ime i prezime</label>
+                            <input type="text" id="reg-name" name="name" placeholder="Vaše ime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-email">Email</label>
+                            <input type="email" id="reg-email" name="email" placeholder="email@domena.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">Lozinka</label>
+                            <input type="password" id="reg-password" name="password" placeholder="Lozinka" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password-confirm">Ponovi lozinku</label>
+                            <input type="password" id="reg-password-confirm" name="password_confirm" placeholder="Potvrdi lozinku" required>
+                        </div>
+                        <button type="submit" class="cta-button">Kreiraj račun</button>
+                    </form>
+                    <p class="form-note">Napomena: Ova forma je statična. Potrebno je dodati serversku logiku (HTTPS, hashiranje lozinki, provjera emaila) da bi registracija stvarno radila i da podaci budu zaštićeni.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
+
+
+
