@@ -85,6 +85,56 @@
             </ul>
         </div>
         
+        <h2>Struktura Korg SOUND-a: oscilatori, multisamplovi i layeri</h2>
+        
+        <div class="step">
+            <h3>EDS-X / EDS-XP engine (Pa1000 / Pa4X / Pa5X)</h3>
+            <p>Na ovim aranžerima svaki <strong>SOUND</strong> se sastoji od više <strong>oscilatora</strong>:</p>
+            <ul>
+                <li>Svaki oscilator koristi jedan <strong>multisample</strong> (skup WAV semplova mapiranih po tipkama).</li>
+                <li>Oscilatori se mogu paliti/ gasiti ovisno o <strong>velocity</strong> razini, području tipkovnice ili drugim uvjetima.</li>
+                <li>Kombinacijom više oscilatora dobivate kompleksan <strong>layer</strong> – npr. piano + pad + šum napada.</li>
+            </ul>
+            <p>U Sound editoru (na samoj klavijaturi) uređujete svaki oscilator posebno: odabir multisampla, tuning, key/velocity range, filter, envelope itd.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Primjeri layera na Korgu</h3>
+            <ul>
+                <li><strong>Piano s noise slojem</strong>: jedan oscilator = glavni piano multisample, drugi = tihi "hammer" ili noise sloj samo na početku.</li>
+                <li><strong>Velocity gitara</strong>: mekši semplovi za tihi velocity, agresivniji semplovi za jaki napad.</li>
+                <li><strong>Debeli synth lead</strong>: više saw oscilatora s blagim detune i različitim panoramama.</li>
+            </ul>
+        </div>
+
+        <h2>Pronalaženje i korištenje zvukova na Korg Pa1000 / Pa4X / Pa5X</h2>
+        
+        <div class="step">
+            <h3>Biranje zvukova u SOUND i STYLE PLAY modu</h3>
+            <p>Bez obzira radi li se o Pa1000, Pa4X ili Pa5X, princip je sličan:</p>
+            <ol>
+                <li>Za uredno isprobavanje zvukova uđite u <strong>SOUND mode</strong> (ili odgovarajući način na vašem modelu).</li>
+                <li>Na ekranu odaberite banci: <strong>Factory / User / Legacy</strong> (ovisno što tražite).</li>
+                <li>Koristite <strong>kategorije</strong> (Piano, Organ, Strings, Brass, Synth...) i listu zvukova ispod.</li>
+                <li>Kada pronađete željeni Sound, pritisnite ga i isprobajte na tipkovnici.</li>
+                <li>Za svirku sa stilom: uđite u <strong>STYLE PLAY</strong> i postavite zvuk na <strong>UPPER 1 / UPPER 2 / UPPER 3</strong> i <strong>LOWER</strong> slotove.</li>
+            </ol>
+            <p><strong>Keyboard Set / STS:</strong> kad ste zadovoljni kombinacijom zvukova, spremite je kao Keyboard Set (ili STS) da je možete brzo pozvati uz stil.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Učitavanje SET-ova i novih zvukova</h3>
+            <p>Za rad s novim zvukovima i semplovima Korg koristi <strong>.SET</strong> pakete:</p>
+            <ul>
+                <li>Na USB-u se nalazi mapa <strong>NEKI_NAZIV.SET</strong> – unutra su <code>SOUND</code>, <code>PAD</code>, <code>PERFORMANCE/KEYBOARD SET</code> i <code>PCM</code> podaci.</li>
+                <li>Na klavijaturi otvorite <strong>Media → Load</strong> (ili ekvivalent na vašem modelu).</li>
+                <li>Odaberite SET ili pojedinačne mape (npr. samo SOUND ili samo PCM).</li>
+                <li>Prilikom učitavanja pazite da ne prepišete postojeće korisničke banke koje želite zadržati.</li>
+                <li>Nakon učitavanja, novi Soundovi će se pojaviti u <strong>User</strong> banci, a pripadajući PCM u memoriji semplova.</li>
+            </ul>
+            <p><strong>Preporuka:</strong> uvijek napravite backup postojećeg SET-a prije učitavanja novog.</p>
+        </div>
+        
         <div class="step">
             <h3>Filter</h3>
             <p>Filter kontrolira koji dijelovi frekvencijskog spektra se čuju:</p>
@@ -174,6 +224,35 @@
         <div class="warning">
             <h3>Važno</h3>
             <p>Nemojte pretjerivati s efektima. Često je bolje imati čist, dobro oblikovan zvuk nego zvuk pretrpan efektima.</p>
+        </div>
+        
+        <h2>Softver i priprema semplova za Korg</h2>
+        
+        <div class="step">
+            <h3>Priprema WAV semplova</h3>
+            <ol>
+                <li>U audio editoru (npr. Audacity, Reaper) pripremite mono WAV datoteke 44.1 kHz / 16-bit.</li>
+                <li>Izrežite početak i kraj tako da nema šuma ni predugih repova.</li>
+                <li>Za duge tonove definirajte loop (dio koji se ponavlja bez "klika").</li>
+                <li>Eksporirajte seriju semplova za različite tonove (npr. svaka tercija: C3, D#3, F#3...).</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Uvoz i mapiranje na Korgu</h3>
+            <p>Na Pa1000 / Pa4X / Pa5X proces je sličan (detalji ovise o OS verziji):</p>
+            <ul>
+                <li>Uđite u <strong>Record / Sampling</strong> ili odgovarajući meni za sempliranje.</li>
+                <li>Učitajte WAV datoteke u PCM memoriju.</li>
+                <li>Kreirajte <strong>multisample</strong> i mapirajte svaki sempl na odgovarajući ton / raspon tipki.</li>
+                <li>Spremite multisample, zatim ga odaberite kao izvor u jednom od oscilatora unutar SOUND-a.</li>
+                <li>Na kraju spremite SOUND u User banku i dodajte ga u SET.</li>
+            </ul>
+        </div>
+        
+        <div class="tip">
+            <h3>Softver treće strane</h3>
+            <p>Postoje specijalizirani alati treće strane za upravljanje Korg SET-ovima (npr. organizacija SOUND/PCM podataka). Koristite ih samo iz pouzdanih izvora i uvijek radite backup prije bilo kakvih izmjena.</p>
         </div>
         
         <h2>Kategorije zvukova</h2>

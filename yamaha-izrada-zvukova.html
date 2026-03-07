@@ -102,6 +102,46 @@
             </ul>
         </div>
         
+        <h2>Pronalaženje zvukova na Yamaha klavijaturama</h2>
+        
+        <div class="step">
+            <h3>PSR, Tyros 4, Genos 2 – osnovna logika</h3>
+            <p>Iako se ekrani razlikuju, princip je isti:</p>
+            <ol>
+                <li>Odaberite dio tipkovnice koji želite promijeniti (Right 1 / Right 2 / Right 3 / Left).</li>
+                <li>Pritisnite tipku <strong>VOICE</strong> ili naziv trenutnog zvuka na ekranu.</li>
+                <li>Na Genos/PSR-SX: birajte po <strong>kategorijama</strong> (Piano, Organ, Strings, Synth...)</li>
+                <li>Na Tyros 4: koristite <strong>VOICE kategorije</strong> i tipke A–J ispod ekrana.</li>
+                <li>Za traženje po imenu: koristite funkciju <strong>Search</strong> (ako je dostupna, npr. na Genosu).</li>
+                <li>Kada ste zadovoljni, taj Voice možete spremiti u <strong>Registration Memory</strong> za brzi poziv.</li>
+            </ol>
+            <p><strong>Praksa:</strong> za svaki važan zvuk (lead, pad, brass...) napravite barem jednu registraciju s podešenim efektima i volumama.</p>
+        </div>
+        
+        <h2>Učitavanje novih zvukova (Expansion / User Voices)</h2>
+        
+        <div class="step">
+            <h3>Genos 2 / PSR-SX serija – Expansion paketi</h3>
+            <ol>
+                <li>Na računalu instalirajte <strong>Yamaha Expansion Manager</strong> (YEM).</li>
+                <li>U YEM-u dodajte službene ili vlastite pakete (stilovi, zvukovi, semplovi).</li>
+                <li>Povežite klavijaturu USB kabelom ili izvezite instalacijski fajl na USB (ovisno o modelu).</li>
+                <li>Na klavijaturi otvorite meni za <strong>Expansion / Pack Installation</strong> i odaberite pripremljeni fajl.</li>
+                <li>Nakon instalacije, novi zvukovi se pojavljuju u <strong>Expansion</strong> kategoriji Voice izbornika.</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Tyros 4 / stariji PSR modeli</h3>
+            <p>Ovi modeli koriste <strong>Custom/User Voice</strong> memoriju:</p>
+            <ul>
+                <li>Zvukovi se učitavaju s USB-a kao <strong>.UVN / .UVX / .VCE</strong> datoteke (ovisno o generaciji).</li>
+                <li>Koristite menije tipa <strong>Voice Set / Custom Voice</strong> za import i spremanje.</li>
+                <li>Nakon učitavanja, Voice se pojavljuje u <strong>User</strong> ili <strong>Custom</strong> banci.</li>
+            </ul>
+            <p>Točna imena menija ovise o modelu, ali logika je ista: USB → Import → spremi u User/Custom.</p>
+        </div>
+        
         <h2>Kako funkcionira zvuk?</h2>
         
         <div class="step">
@@ -122,6 +162,28 @@
                 <li><strong>Element</strong> - pojedinačni zvuk koji čini Voice</li>
                 <li><strong>Voice može imati 1-4 elementa</strong> - što više elemenata, kompleksniji zvuk</li>
                 <li><strong>Svaki element</strong> ima vlastiti waveform, filter, envelope i efekte</li>
+            </ul>
+        </div>
+        
+        <h2>Oscilatori, elementi i layeri u praksi</h2>
+        
+        <div class="step">
+            <h3>AWM2 i struktura zvuka</h3>
+            <p>Na Genosu 2, Tyrosu 4 i većini PSR aranžera Yamaha koristi <strong>AWM2</strong> engine:</p>
+            <ul>
+                <li>Svaki <strong>Element</strong> možete zamisliti kao jedan "oscilator" koji svira određeni uzorak (waveform).</li>
+                <li>Više elemenata se može složiti kao <strong>layer</strong> – npr. jedan za tihi sloj, drugi za jači udarac.</li>
+                <li>Elementi se mogu ograničiti po <strong>rasponu tipki</strong> (key range) i <strong>snazi pritiska</strong> (velocity range).</li>
+            </ul>
+            <p>U <code>Voice Editoru</code> (na klavijaturi ili u računalnom editoru) podešavate upravo te elemente i kako se preklapaju.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Primjeri layera</h3>
+            <ul>
+                <li><strong>Piano + pad</strong>: Element 1 = piano, Element 2 = tihi synth pad s dužim releaseom.</li>
+                <li><strong>Velocity switch gitara</strong>: tihi pritisak = čista gitara, jači pritisak = "picked" gitara.</li>
+                <li><strong>Drums</strong>: različiti semplovi bubnja mapirani na različite tipke unutar istog Voice-a.</li>
             </ul>
         </div>
         
@@ -181,6 +243,29 @@
                 </ul>
                 <li>Spremite kao novi User Voice</li>
             </ol>
+        </div>
+
+        <h2>Rad sa semplovima i mapama zvukova</h2>
+        
+        <div class="step">
+            <h3>Priprema audio materijala</h3>
+            <ol>
+                <li>Pripremite WAV datoteke (najčešće 44.1 kHz, 16-bit, mono) za svaki ton ili skup tonova.</li>
+                <li>Očistite šum i normalizirajte glasnoću u audio editoru (npr. Audacity, Reaper).</li>
+                <li>Izrežite početak/rep tako da napad (attack) bude precizan.</li>
+                <li>Za duge tonove podesite <strong>loop točku</strong> (dio koji se ponavlja bez "klika").</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Mapa zvuka (key/velocity mapping)</h3>
+            <p>Bilo u YEM-u ili na samoj klavijaturi, princip je isti:</p>
+            <ul>
+                <li>Svaki sempl dodijelite određenom <strong>tonu</strong> (npr. C3, F3...) ili rasponu tipki.</li>
+                <li>Po želji definirajte različite semplove za različite <strong>velocity</strong> razine (meko, srednje, jako sviranje).</li>
+                <li>Grupa tih semplova čini jedan <strong>Waveform</strong>, koji se zatim koristi u Elementu.</li>
+            </ul>
+            <p>Kad jednom složite Waveform i Element, dalje se ponaša kao bilo koji drugi Voice – možete dodavati filter, envelope i efekte.</p>
         </div>
         
         <div class="step">

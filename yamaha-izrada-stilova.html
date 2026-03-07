@@ -104,6 +104,59 @@
             </ol>
         </div>
         
+        <h2>MIDI struktura za Yamaha stilove</h2>
+        
+        <div class="step">
+            <h3>Standardni MIDI kanali</h3>
+            <p>Kada pripremate stil u DAW-u (Cubase, Reaper, itd.), preporučena raspodjela kanala je:</p>
+            <ul>
+                <li><strong>Kanal 9</strong> - Rhythm Sub (dodatni bubnjevi/perkusije)</li>
+                <li><strong>Kanal 10</strong> - Rhythm Main (glavni bubnjevi)</li>
+                <li><strong>Kanal 11</strong> - Bass</li>
+                <li><strong>Kanal 12</strong> - Chord 1</li>
+                <li><strong>Kanal 13</strong> - Chord 2</li>
+                <li><strong>Kanal 14</strong> - Pad</li>
+                <li><strong>Kanal 15</strong> - Phrase 1</li>
+                <li><strong>Kanal 16</strong> - Phrase 2</li>
+            </ul>
+            <p>Na taj način Yamaha ispravno prepoznaje svaki dio stila prilikom uvoza MIDI datoteke.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Duljina patterna i tempo</h3>
+            <ul>
+                <li>Glavni dijelovi (Main A–D) obično su <strong>4–8 taktova</strong></li>
+                <li>Intro i Ending mogu biti <strong>1–8 taktova</strong> (ovisno o kompleksnosti)</li>
+                <li>Fill-in dijelovi su u pravilu <strong>1 takt</strong></li>
+                <li>Tempo u MIDI datoteci mora odgovarati željenom tempu stila</li>
+            </ul>
+        </div>
+        
+        <h2>Markeri za Intro, Main, Fill, Break i Ending</h2>
+        
+        <div class="step">
+            <h3>Kako označiti sekcije u MIDI datoteci</h3>
+            <p>Za automatsku konverziju MIDI → Style koriste se tekstualni markeri (Text/Marker eventi) u MIDI traci:</p>
+            <ul>
+                <li><strong>Intro dijelovi</strong>: <code>Intro A</code>, <code>Intro B</code>, <code>Intro C</code></li>
+                <li><strong>Main dijelovi</strong>: <code>Main A</code>, <code>Main B</code>, <code>Main C</code>, <code>Main D</code></li>
+                <li><strong>Fill-in dijelovi</strong>: <code>Fill In AA</code>, <code>Fill In BB</code>, <code>Fill In CC</code>, <code>Fill In DD</code></li>
+                <li><strong>Break</strong>: često označen kao <code>Fill In BA</code> (Break sekcija)</li>
+                <li><strong>Ending dijelovi</strong>: <code>Ending A</code>, <code>Ending B</code>, <code>Ending C</code></li>
+            </ul>
+            <p>Markeri se nalaze na početku prvog takta svake sekcije.</p>
+        </div>
+        
+        <div class="step">
+            <h3>Početni sistemski marker</h3>
+            <p>Na početku MIDI datoteke često se koriste posebni markeri:</p>
+            <ul>
+                <li><code>SFF1</code> ili <code>SFF2</code> - format stila (ovisno o generaciji klavijature)</li>
+                <li><code>SInt</code> - označava početak podataka stila</li>
+            </ul>
+            <p>U prvim taktovima postavite i sve potrebne kontrolne promjene (program change, volume, pan, reverb, chorus).</p>
+        </div>
+        
         <h2>Kako funkcionira stil?</h2>
         
         <div class="info">
@@ -178,6 +231,32 @@
             <h3>6. Break i Ending</h3>
             <p><strong>Break:</strong> Pauza gdje stil prestaje, omogućavajući vam solo sviranje</p>
             <p><strong>Ending:</strong> Završni dio s finišnom frazurom</p>
+        </div>
+        
+        <h2>Uvoz MIDI datoteke kao Yamaha stila</h2>
+        
+        <div class="step">
+            <h3>Priprema MIDI datoteke</h3>
+            <ol>
+                <li>U DAW-u napravite projekt s <strong>najmanje 8 MIDI kanala</strong> (Drum, Bass, Chord 1/2, Pad, Phrase 1/2)</li>
+                <li>Postavite tempo koji želite koristiti u stilu</li>
+                <li>Za svaku sekciju (Intro, Main, Fill, Break, Ending) napravite odgovarajući broj taktova</li>
+                <li>Dodajte tekstualne markere (Intro A, Main A, Fill In AA, Ending A, itd.) na početke sekcija</li>
+                <li>Spremite MIDI kao <strong>Standard MIDI File (SMF)</strong>, najčešće Type 0 ili Type 1 (ovisno o alatu koji koristite za konverziju)</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Import na klavijaturi</h3>
+            <ol>
+                <li>Prebacite MIDI datoteku na USB stick</li>
+                <li>Uključite klavijaturu i otvorite <strong>Style Creator / Style Editor</strong></li>
+                <li>Odaberite opciju <strong>"MIDI → Style"</strong> ili sličnu (naziv ovisi o modelu)</li>
+                <li>Odaberite svoj MIDI fajl i učitajte ga</li>
+                <li>Provjerite da su kanali ispravno mapirani na Drum, Bass, Chord, Pad i Phrase dijelove</li>
+                <li>Po potrebi doradite pojedine sekcije direktno na klavijaturi</li>
+                <li>Spremite novi stil kao .sty datoteku u User memoriju ili na USB</li>
+            </ol>
         </div>
         
         <h2>Napredne tehnike</h2>

@@ -71,6 +71,37 @@
             <p>Započnite s postojećim stylom koji je sličan onome što želite kreirati. Ovo će vam dati dobru osnovu za rad.</p>
         </div>
         
+        <h2>Struktura Korg styla i kanali</h2>
+        
+        <div class="step">
+            <h3>Standardne Korg Style trake</h3>
+            <p>Korg aranžeri koriste do 8 glavnih traka u stylu:</p>
+            <ul>
+                <li><strong>DRUM</strong> – glavni bubnjevi</li>
+                <li><strong>PERC</strong> – dodatne perkusije</li>
+                <li><strong>BASS</strong> – bas linija</li>
+                <li><strong>ACC1</strong> – akordi / ritam gitara / klavir</li>
+                <li><strong>ACC2</strong> – drugi akordni instrument</li>
+                <li><strong>ACC3</strong> – dodatni slojevi (pad, synth, itd.)</li>
+                <li><strong>ACC4</strong> – dodatne fraze ili dubliranja</li>
+                <li><strong>ACC5</strong> – melodijske linije ili efekti</li>
+            </ul>
+            <p>U DAW-u je praktično otvoriti <strong>8 MIDI traka</strong>, svaka namijenjena jednoj od ovih uloga. Kasnije prilikom importa na Korg dodjeljujete svaku MIDI traku odgovarajućem Style tracku (DRUM, BASS, ACC1 itd.).</p>
+        </div>
+        
+        <div class="step">
+            <h3>Markerima označene sekcije</h3>
+            <p>Za rad sa MIDI fajlovima i Style Record / Style Creator Bot funkcijama, u MIDI datoteci možete označiti sekcije:</p>
+            <ul>
+                <li><strong>Intro 1 / Intro 2 / Intro 3</strong> – uvodni dijelovi</li>
+                <li><strong>Var 1 – Var 4</strong> – glavne varijacije</li>
+                <li><strong>Fill 1 – Fill 4</strong> – prijelazi između varijacija</li>
+                <li><strong>Break</strong> – kratki prekid s akcentom</li>
+                <li><strong>Ending 1 – Ending 3</strong> – završni dijelovi</li>
+            </ul>
+            <p>Točni nazivi markera mogu malo varirati ovisno o generaciji (Pa3X, Pa4X, Pa5X), ali ideja je ista: svaka sekcija ima svoj marker na početku prvog takta.</p>
+        </div>
+        
         <div class="step">
             <h3>2. Prilagodba sekcija</h3>
             <p>Svaka sekcija styla može se uređivati zasebno:</p>
@@ -92,6 +123,33 @@
                 <li>Uređivanje ritmičkog obrasca</li>
                 <li>Dodavanje efekata</li>
             </ul>
+        </div>
+        
+        <h2>MIDI priprema za Korg style</h2>
+        
+        <div class="step">
+            <h3>Kakav MIDI fajl je potreban</h3>
+            <ol>
+                <li>U DAW-u postavite <strong>tempo</strong> koji želite koristiti u stylu</li>
+                <li>Napravite do 8 MIDI traka (DRUM, PERC, BASS, ACC1–ACC5)</li>
+                <li>Svaku traku koristite za jedan instrument/ulogu (ne miješati više instrumenata na istu traku ako će kasnije trebati odvojena kontrola)</li>
+                <li>Za svaku sekciju (Intro, Var, Fill, Break, Ending) napravite odgovarajući broj taktova</li>
+                <li>Dodajte markere za početke sekcija (Intro 1, Var 1, Fill 1, Ending 1, itd. – prema modelu koji koristite)</li>
+                <li>Spremite MIDI kao <strong>Standard MIDI File</strong> (SMF), najčešće Type 0 ili Type 1</li>
+            </ol>
+        </div>
+        
+        <div class="step">
+            <h3>Import i export na Korg aranžeru</h3>
+            <ol>
+                <li>Prebacite MIDI fajl na USB stick ili internu memoriju (ovisno o modelu)</li>
+                <li>Na Korgu otvorite <strong>Style Record / Style Creator</strong> način rada</li>
+                <li>Odaberite opciju za uvoz MIDI fajla u stil (Import SMF to Style / Style Creator Bot)</li>
+                <li>Mapirajte svaku MIDI traku na odgovarajući Style track (DRUM, PERC, BASS, ACC1–ACC5)</li>
+                <li>Provjerite duljinu patterna, looping i transpoziciju</li>
+                <li>Spremite stil u korisnički bank (User) ili u SET datoteku</li>
+                <li>Po želji napravite <strong>backup</strong> kompletnog SET-a na USB</li>
+            </ol>
         </div>
         
         <div class="tip">
