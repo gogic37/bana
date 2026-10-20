@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Što je MIDI? - Midi Connect Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigacija -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">Midi Connect Portal</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="o-meni.html">O meni</a></li>
+                <li class="dropdown">
+                    <span class="nav-title">Klavijature</span>
+                    <ul class="dropdown-content">
+                        <li><a href="korg.html">Korg</a></li>
+                        <li><a href="yamaha.html">Yamaha</a></li>
+                        <li><a href="roland.html">Roland</a></li>
+                        <li><a href="medeli.html">Medeli AKX10</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Stilovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="korg-izrada-stylova.html">Korg stilovi</a></li>
+                        <li><a href="yamaha-izrada-stilova.html">Yamaha stilovi</a></li>
+                        <li><a href="medeli-izrada-stylova.html">Medeli stilovi</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <span class="nav-title">Zvukovi</span>
+                    <ul class="dropdown-content">
+                        <li><a href="korg-izrada-zvukova.html">Korg zvukovi</a></li>
+                        <li><a href="yamaha-izrada-zvukova.html">Yamaha zvukovi</a></li>
+                        <li><a href="medeli-izrada-zvukova.html">Medeli zvukovi</a></li>
+                    </ul>
+                </li>
+                <li><a href="midi.html" class="active">Midi</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Log in</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-content">
+        <section class="text-section">
+            <div class="container midi-page">
+                <h1>Što je MIDI?</h1>
+
+                <div class="info-box highlight">
+                    <h2>Zašto je MIDI bitan?</h2>
+                    <p>
+                        MIDI ti omogućuje da <strong>jednom klavijaturom kontroliraš više instrumenata</strong>, mijenjaš zvukove,
+                        pokrećeš stilove i upravljaš aranžmanom – sve bez audio kablova, samo putem digitalnih poruka.
+                    </p>
+                    <ul>
+                        <li><strong>Ne nosi zvuk</strong>, već informacije (note, pedala, programi, efekti…)</li>
+                        <li><strong>Štedi vrijeme</strong> – jednim klikom mijenjaš kompletan setup</li>
+                        <li><strong>Standard</strong> – svi veliki proizvođači (Korg, Yamaha, Roland…) ga podržavaju</li>
+                    </ul>
+                </div>
+
+                <h2>Kako funkcionira veza MIDI s drugim uređajima</h2>
+                <p>
+                    Klasični MIDI koristi <strong>5-pinski DIN kabel</strong> (MIDI IN / OUT / THRU), dok moderni instrumenti
+                    često koriste <strong>USB-MIDI</strong>. U oba slučaja princip je isti:
+                </p>
+                <ul class="spaced-list">
+                    <li><strong>MIDI OUT</strong>: instrument šalje MIDI poruke van (prema drugoj klavijaturi, modulu ili računalu).</li>
+                    <li><strong>MIDI IN</strong>: instrument prima MIDI poruke izvana.</li>
+                    <li><strong>MIDI THRU</strong>: prosljeđuje primljene MIDI poruke dalje na sljedeći uređaj.</li>
+                </ul>
+                <p>
+                    Tipičan setup: Korg ili Yamaha kao <strong>master</strong> šalje note i promjene programa u
+                    <strong>računalo (DAW)</strong> ili u <strong>drugi synth/modul</strong>, dok istovremeno prima clock ili start/stop
+                    poruke natrag.
+                </p>
+
+                <div class="info-box note">
+                    <h3>Brzi savjet za spajanje</h3>
+                    <p>
+                        Ako koristiš jedan aranžer i računalo, obično je dovoljno: <strong>USB kabel</strong> iz klavijature u PC.
+                        U postavkama DAW-a izabereš tu klavijaturu kao MIDI ulaz/izlaz i već si spreman za snimanje.
+                    </p>
+                </div>
+
+                <h2>Osnovne MIDI poruke</h2>
+                <p>Najvažnije MIDI poruke za glazbenike su:</p>
+                <ul class="spaced-list">
+                    <li><strong>Note On / Note Off</strong> – pritisak i otpuštanje tipke (sadrže i <em>velocity</em> – jačinu udara).</li>
+                    <li><strong>Control Change (CC)</strong> – promjena vrijednosti nekog kontrolera (volumen, modulacija, pedal…).</li>
+                    <li><strong>Program Change</strong> – promjena programa, tj. odabir zvuka / voice-a / registra.</li>
+                    <li><strong>Pitch Bend</strong> – savijanje tona kotačićem ili joystickom.</li>
+                    <li><strong>System Exclusive (SysEx)</strong> – posebne proizvođačke poruke za duboku kontrolu i backup.</li>
+                </ul>
+
+                <div class="info-box important">
+                    <h3>Što je najbitnije zapamtiti?</h3>
+                    <p>
+                        Za svakodnevnu svirku i izradu stilova najčešće ćeš raditi s:
+                        <strong>Note On/Off</strong>, <strong>Control Change</strong> i <strong>Program Change</strong> porukama.
+                        SysEx postaje važan tek kad kreneš u backup, duboki edit i specijalne funkcije.
+                    </p>
+                </div>
+
+                <h2>Control Change (CC) – mogućnosti</h2>
+                <p>
+                    Control Change poruke šalju broj kontrolera (CC broj) i vrijednost (0–127). Neki tipični primjeri:
+                </p>
+                <ul class="spaced-list two-column">
+                    <li><strong>CC1 – Modulation</strong>: vibrato, efekti, često vezan na joystick ili kotačić.</li>
+                    <li><strong>CC7 – Volume</strong>: glavni volumen MIDI kanala.</li>
+                    <li><strong>CC10 – Pan</strong>: pozicija u stereo slici (lijevo–desno).</li>
+                    <li><strong>CC11 – Expression</strong>: fina kontrola glasnoće, često za dinamiku sola.</li>
+                    <li><strong>CC64 – Sustain pedal</strong>: držanje tona kao na klaviru (pedala).</li>
+                    <li><strong>CC91 / CC93</strong>: količina reverba i chorusa na nekim instrumentima.</li>
+                </ul>
+                <p>
+                    U aranžerima (Korg, Yamaha) CC poruke se koriste za automatizaciju volumena, efekata, pedale,
+                    filtera i drugih parametara u <strong>stylovima</strong> i <strong>user zvukovima</strong>.
+                </p>
+
+                <div class="info-box example">
+                    <h3>Primjer: CC u stilu</h3>
+                    <p>
+                        U jednom varijantu stila bubanj može dobiti više reverba (CC91), dok u drugoj varijanti bas
+                        dobiva malo više volumena (CC7) za naglašavanje refrena – sve se to pamti unutar style datoteke.
+                    </p>
+                </div>
+
+                <h2>Program Change – promjena zvukova</h2>
+                <p>
+                    <strong>Program Change</strong> poruka mijenja odabrani zvuk na određenom MIDI kanalu.
+                    U praktičnom radu to znači:
+                </p>
+                <ul class="spaced-list">
+                    <li>Promjena lead zvuka za solo dok sviraš iz master klavijature.</li>
+                    <li>Prebacivanje između različitih registracija / performansi iz DAW-a.</li>
+                    <li>Automatsko biranje zvukova u aranžmanima ili MIDI pjesmama.</li>
+                </ul>
+                <p>
+                    Mnogi aranžeri uz Program Change koriste i <strong>Bank Select</strong> (CC0/CC32) kako bi pristupili
+                    proširenim bankama (user, expansion, legacy banke).
+                </p>
+
+                <h2>MIDI kanali u Korg i Yamaha stilovima</h2>
+                <p>
+                    MIDI koristi do <strong>16 kanala</strong> (1–16). Aranžeri (Korg, Yamaha) interno koriste te kanale
+                    za raspodjelu dijelova stila i desne/lijeve ruke. Tipičan primjer (može se razlikovati po modelu):
+                </p>
+                <div class="columns">
+                    <div>
+                        <h3>Korg (tipična podjela)</h3>
+                        <ul class="spaced-list">
+                            <li><strong>CH 1–4</strong>: Upper 1–3, Lower (desna/lijeva ruka)</li>
+                            <li><strong>CH 9–10</strong>: Drum / Percussion</li>
+                            <li><strong>CH 11–16</strong>: Bass + Acc1–Acc5</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Yamaha (tipična podjela)</h3>
+                        <ul class="spaced-list">
+                            <li><strong>CH 1–3</strong>: Right1–3</li>
+                            <li><strong>CH 4</strong>: Left</li>
+                            <li><strong>CH 9–16</strong>: bubanj, bas, prateći dijelovi stila</li>
+                        </ul>
+                    </div>
+                </div>
+                <p>
+                    Kod izrade <strong>style</strong> datoteka za Korg i Yamahu moraš paziti na:
+                </p>
+                <ul class="spaced-list">
+                    <li>koji dio aranžmana je na kojem kanalu (drums, bass, acc1–acc5…)</li>
+                    <li>koje Program Change i CC poruke se koriste za izbor zvukova i dinamiku</li>
+                    <li>transponiranje kanala (npr. bas i akordi prate akorde lijeve ruke)</li>
+                </ul>
+
+                <div class="info-box tip">
+                    <h3>Praktičan savjet za stilove</h3>
+                    <p>
+                        Ako radiš stil u DAW-u, isplati se odmah imenovati kanale (npr. “DRUMS CH10”, “BASS CH11”)
+                        i zaključati velocity/volumen u granice koje tvoj aranžer voli – tako će stil odmah raditi kako treba.
+                    </p>
+                </div>
+
+                <h2>Razumijevanje MIDI poruka i SysEx</h2>
+                <p>
+                    Svaka MIDI poruka u pozadini je niz bajtova. Primjer:
+                </p>
+                <ul class="spaced-list">
+                    <li><strong>Note On</strong>: status bajt (kanal + tip poruke) + broj note + velocity.</li>
+                    <li><strong>CC</strong>: status bajt + CC broj + vrijednost (0–127).</li>
+                    <li><strong>Program Change</strong>: status bajt + broj programa.</li>
+                </ul>
+                <p>
+                    <strong>SysEx (System Exclusive)</strong> poruke počinju s bajtom <code>F0</code> i završavaju s <code>F7</code>, a
+                    sve između je specifično za proizvođača (Korg, Yamaha, Roland…). Preko SysEx poruka moguće je:
+                </p>
+                <ul class="spaced-list">
+                    <li>raditi <strong>backup i restore</strong> kompletnih postavki klavijature</li>
+                    <li>mijenjati skrivene parametre i globalne postavke</li>
+                    <li>slati detaljne edit podatke za zvukove i stilove</li>
+                </ul>
+                <p>
+                    Za ozbiljniji rad sa SysEx porukama često se koristi računalni MIDI monitor
+                    (npr. MIDI-OX, pocket MIDI) kako bi se vidjelo točno koje poruke instrument šalje/prima.
+                </p>
+
+                <div class="info-box warning">
+                    <h3>Pažnja kod SysEx poruka</h3>
+                    <p>
+                        SysEx je moćan, ali i opasan – jednim krivim dumpom možeš prepisati postojeće setove i zvukove.
+                        Prije igranja sa SysExom obavezno napravi <strong>backup</strong> cijelog instrumenta.
+                    </p>
+                </div>
+
+                <h2>Praktična primjena u tvom setupu</h2>
+                <p>
+                    Na ovoj stranici ćemo dalje, kroz primjere i tutorijale, prikazati:
+                </p>
+                <ul class="spaced-list">
+                    <li>kako spojiti Korg/Yamaha na računalo i drugi synth putem MIDI-ja</li>
+                    <li>kako koristiti CC i Program Change za live svirku</li>
+                    <li>kako čitati i uređivati MIDI fileove i style datoteke</li>
+                    <li>kako razumjeti i iskoristiti SysEx za backup i napredne funkcije</li>
+                </ul>
+                <p>
+                    Cilj je da ti MIDI postane <strong>alat</strong>, a ne misterija – da znaš što se događa
+                    “ispod haube” tvojih omiljenih aranžera.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Kontakt</h3>
+                <p><i class="fas fa-envelope"></i> gogic37@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Pratite nas</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/groups/330748004039789" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@gogic37/videos" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Midi Connect Portal. Sva prava pridržana.</p>
+        </div>
+    </footer>
+</body>
+</html>
